@@ -7,5 +7,12 @@ export default defineConfig({
 		fs: {
 			allow: ['./_posts']
 		}
+	},
+	css: {
+		preprocessorOptions: {
+			scss: {
+				api: 'modern'
+			}
+		}
 	}
 });
