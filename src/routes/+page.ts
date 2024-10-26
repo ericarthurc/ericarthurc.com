@@ -1,18 +1,25 @@
-import { error } from '@sveltejs/kit';
 import type { PageLoad } from './$types';
-import type { Component } from 'svelte';
+import type { PostMeta } from '@/types';
 
 export const load: PageLoad = async () => {
-	// const post = await import(`$posts/${params.slug}.md`);
-	const posts = import.meta.glob(`$posts/*.md`);
-	console.log(posts);
+	const paths = import.meta.glob(`$posts/*.md`, { eager: true });
 
-	// return {
-	// 	content: post.default as Component,
-	// 	meta: post.metadata as { slug: string; title: string; date: Date; categories: string[] }
-	// };
+	let posts = Object.entries(paths).map(([path, file]) => {
+		const slug = path.split('/').at(-1)?.replace('.md', '');
 
-	return {};
+		if (file && typeof file === 'object' && 'metadata' in file && slug) {
+			const metadata = file.metadata as Omit<PostMeta, 'slug'>;
+			const post = { ...metadata, slug } satisfies PostMeta;
 
-	// error(404, 'Not found');
+			return {
+				...post
+			};
+		}
+	}) as PostMeta[];
+
+	posts = posts.sort(
+		(first, second) => new Date(second.date).getTime() - new Date(first.date).getTime()
+	);
+
+	return { posts };
 };

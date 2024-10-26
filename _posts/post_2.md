@@ -1,6 +1,5 @@
 ---
 title: Burger
-slug: burger
 ---
 
 # Header

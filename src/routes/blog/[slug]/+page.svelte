@@ -4,8 +4,8 @@
 	export let data: PageData;
 </script>
 
-<h4>{data.meta.title}</h4>
-<h4>{data.meta.slug}</h4>
+<h4>title: {data.meta.title}</h4>
+<h4>slug: {data.meta.slug}</h4>
 <h4>{new Date(data.meta.date).toDateString()}</h4>
 
 {#each data.meta.categories as c}

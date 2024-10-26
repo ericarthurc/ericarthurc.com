@@ -1,6 +1,5 @@
 ---
 title: Hotdog
-slug: hotdog
 ---
 
 # Header

@@ -1,6 +1,5 @@
 ---
 title: Taco
-slug: taco
 ---
 
 # Header
