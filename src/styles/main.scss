@@ -15,8 +15,8 @@
 }
 
 html {
-	background-color: #222;
-	color: #fff;
+	background-color: #1f1f25;
+	color: #dfdfd6;
 	font-family: 'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
 		'Segoe UI Symbol', 'Noto Color Emoji';
 }
@@ -47,9 +47,9 @@ html {
 	margin-right: 10px;
 	font-size: 12px;
 
-	&::first-letter {
-		text-transform: uppercase;
-	}
+	// &::first-letter {
+	// 	text-transform: uppercase;
+	// }
 }
 
 pre.aero {

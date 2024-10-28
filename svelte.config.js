@@ -1,93 +1,91 @@
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import { mdsvex } from 'mdsvex';
-import rehypeSlug from 'rehype-slug';
-import { bundledLanguages, createHighlighter } from 'shiki';
+import { bundledLanguages, bundledThemes, createHighlighter } from 'shiki';
 
 const shiki = await createHighlighter({
-	themes: ['andromeeda'],
+	themes: [...Object.keys(bundledThemes)],
 	langs: [...Object.keys(bundledLanguages)]
 });
+
+const escape_svelty = (str) =>
+	str
+		.replace(/[{}`]/g, (c) => ({ '{': '&#123;', '}': '&#125;', '`': '&#96;' })[c])
+		.replace(/\\([trn])/g, '&#92;$1');
 
 /** @type {import('mdsvex').MdsvexOptions} */
 const mdsvexOptions = {
 	extensions: ['.md'],
+	remarkPlugins: [],
+	rehypePlugins: [],
 	highlight: {
 		highlighter: async (code, lang, _meta) => {
-			return shiki.codeToHtml(code, {
-				lang,
-				theme: 'andromeeda',
-				transformers: [
-					{
-						pre(hast) {
-							return {
-								type: 'element',
-								tagName: 'div',
-								properties: {
-									className: 'code-block'
-								},
-								children: [
-									{
-										type: 'element',
-										tagName: 'p',
-										properties: {
-											className: 'code-block-header'
-										},
-										children: [
-											{
-												type: 'element',
-												tagName: 'span',
-												properties: {
-													className: 'language-name'
-												},
-												children: [{ type: 'text', value: lang }]
-											}
-										]
+			return escape_svelty(
+				shiki.codeToHtml(code, {
+					lang,
+					theme: 'ayu-dark',
+					transformers: [
+						{
+							pre(hast) {
+								return {
+									type: 'element',
+									tagName: 'div',
+									properties: {
+										className: 'code-block'
 									},
-									// {
-									// 	type: 'element',
-									// 	tagName: 'span',
-									// 	properties: {
-									// 		className: 'language-name'
-									// 	},
-									// 	children: [{ type: 'text', value: lang }]
-									// },
-									{
-										type: 'element',
-										tagName: 'pre',
-										properties: {
-											className: 'aero'
+									children: [
+										{
+											type: 'element',
+											tagName: 'p',
+											properties: {
+												className: 'code-block-header'
+											},
+											children: [
+												{
+													type: 'element',
+													tagName: 'span',
+													properties: {
+														className: 'language-name'
+													},
+													children: [{ type: 'text', value: lang }]
+												}
+											]
 										},
-										children: hast.children
-									}
-								]
-							};
-						},
-						line(hast, line) {
-							return {
-								type: 'element',
-								tagName: 'span',
-								properties: {
-									className: 'line'
-								},
-								children: hast.children
-							};
-						},
-						span(hast, line) {
-							return {
-								type: 'element',
-								tagName: 'span',
-								properties: hast.properties,
-								children: hast.children
-							};
+										{
+											type: 'element',
+											tagName: 'pre',
+											properties: {
+												className: 'aero'
+											},
+											children: hast.children
+										}
+									]
+								};
+							},
+							line(hast, line) {
+								return {
+									type: 'element',
+									tagName: 'span',
+									properties: {
+										className: 'line'
+									},
+									children: hast.children
+								};
+							},
+							span(hast, line) {
+								return {
+									type: 'element',
+									tagName: 'span',
+									properties: hast.properties,
+									children: hast.children
+								};
+							}
 						}
-					}
-				]
-			});
+					]
+				})
+			);
 		}
-	},
-	remarkPlugins: [],
-	rehypePlugins: [rehypeSlug]
+	}
 };
 
 /** @type {import('@sveltejs/kit').Config} */

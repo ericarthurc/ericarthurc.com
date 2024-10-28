@@ -14,5 +14,11 @@ categories:
 ### Headerss
 
 ```ts
-const x: string = 'I love cheese';
+const a: number = 50;
 ```
+
+<!-- ```javascript
+const a = async (x) => {
+	return x++;
+};
+``` -->
