@@ -1,5 +1,10 @@
 ---
 title: Taco
+author: eac
+date: 'Jan 7, 2021'
+categories:
+  - food
+  - saucy
 ---
 
 # Header

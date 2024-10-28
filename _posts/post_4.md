@@ -1,5 +1,10 @@
 ---
 title: Hotdog
+author: eac
+date: 'Oct 10, 2022'
+categories:
+  - food
+  - saucy
 ---
 
 # Header

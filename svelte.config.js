@@ -13,12 +13,76 @@ const shiki = await createHighlighter({
 const mdsvexOptions = {
 	extensions: ['.md'],
 	highlight: {
-		highlighter: async (code, lang, meta) => {
+		highlighter: async (code, lang, _meta) => {
 			return shiki.codeToHtml(code, {
 				lang,
 				theme: 'andromeeda',
-				cssVariablePrefix: '--theme-',
-				defaultColor: ''
+				transformers: [
+					{
+						pre(hast) {
+							return {
+								type: 'element',
+								tagName: 'div',
+								properties: {
+									className: 'code-block'
+								},
+								children: [
+									{
+										type: 'element',
+										tagName: 'p',
+										properties: {
+											className: 'code-block-header'
+										},
+										children: [
+											{
+												type: 'element',
+												tagName: 'span',
+												properties: {
+													className: 'language-name'
+												},
+												children: [{ type: 'text', value: lang }]
+											}
+										]
+									},
+									// {
+									// 	type: 'element',
+									// 	tagName: 'span',
+									// 	properties: {
+									// 		className: 'language-name'
+									// 	},
+									// 	children: [{ type: 'text', value: lang }]
+									// },
+									{
+										type: 'element',
+										tagName: 'pre',
+										properties: {
+											className: 'aero'
+										},
+										children: hast.children
+									}
+								]
+							};
+						},
+						line(hast, line) {
+							return {
+								type: 'element',
+								tagName: 'span',
+								properties: {
+									className: 'line'
+								},
+								children: hast.children
+							};
+						},
+						span(hast, line) {
+							return {
+								type: 'element',
+								tagName: 'span',
+								properties: hast.properties,
+								children: hast.children
+							};
+						}
+					}
+				]
 			});
 		}
 	},

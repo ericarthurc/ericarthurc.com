@@ -13,9 +13,25 @@
 			<a href={`/blog/${p.slug}`}>{p.slug}</a>
 			<div>
 				{#each p.categories as c}
-					<span>{c}</span>
+					<span>{c}{' / '}</span>
 				{/each}
 			</div>
 		</li>
 	{/each}
 </ul>
+
+<style lang="scss">
+	ul {
+		list-style-type: none;
+		padding: 0px 10px;
+	}
+
+	a {
+		text-decoration: none;
+		color: #ff0000;
+
+		&:hover {
+			color: #990f0f;
+		}
+	}
+</style>
