@@ -8,6 +8,7 @@ const shiki = await createHighlighter({
 	langs: [...Object.keys(bundledLanguages)]
 });
 
+/** @return {string} */
 const escape_svelty = (str) =>
 	str
 		.replace(/[{}`]/g, (c) => ({ '{': '&#123;', '}': '&#125;', '`': '&#96;' })[c])
@@ -20,70 +21,68 @@ const mdsvexOptions = {
 	rehypePlugins: [],
 	highlight: {
 		highlighter: async (code, lang, _meta) => {
-			return escape_svelty(
-				shiki.codeToHtml(code, {
-					lang,
-					theme: 'ayu-dark',
-					transformers: [
-						{
-							pre(hast) {
-								return {
-									type: 'element',
-									tagName: 'div',
-									properties: {
-										className: 'code-block'
-									},
-									children: [
-										{
-											type: 'element',
-											tagName: 'p',
-											properties: {
-												className: 'code-block-header'
-											},
-											children: [
-												{
-													type: 'element',
-													tagName: 'span',
-													properties: {
-														className: 'language-name'
-													},
-													children: [{ type: 'text', value: lang }]
-												}
-											]
+			return `{@html \`${shiki.codeToHtml(code, {
+				lang,
+				theme: 'ayu-dark',
+				transformers: [
+					{
+						pre(hast) {
+							return {
+								type: 'element',
+								tagName: 'div',
+								properties: {
+									className: 'code-block'
+								},
+								children: [
+									{
+										type: 'element',
+										tagName: 'p',
+										properties: {
+											className: 'code-block-header'
 										},
-										{
-											type: 'element',
-											tagName: 'pre',
-											properties: {
-												className: 'aero'
-											},
-											children: hast.children
-										}
-									]
-								};
-							},
-							line(hast, line) {
-								return {
-									type: 'element',
-									tagName: 'span',
-									properties: {
-										className: 'line'
+										children: [
+											{
+												type: 'element',
+												tagName: 'span',
+												properties: {
+													className: 'language-name'
+												},
+												children: [{ type: 'text', value: lang }]
+											}
+										]
 									},
-									children: hast.children
-								};
-							},
-							span(hast, line) {
-								return {
-									type: 'element',
-									tagName: 'span',
-									properties: hast.properties,
-									children: hast.children
-								};
-							}
+									{
+										type: 'element',
+										tagName: 'pre',
+										properties: {
+											className: 'aero'
+										},
+										children: hast.children
+									}
+								]
+							};
+						},
+						line(hast, line) {
+							return {
+								type: 'element',
+								tagName: 'span',
+								properties: {
+									className: 'line'
+								},
+								children: hast.children
+							};
+						},
+						span(hast, line) {
+							return {
+								type: 'element',
+								tagName: 'span',
+								properties: hast.properties,
+								children: hast.children
+							};
 						}
-					]
-				})
-			);
+					}
+				]
+			})}\`}`;
 		}
 	}
 };

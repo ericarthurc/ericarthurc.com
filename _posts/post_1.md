@@ -40,3 +40,73 @@ const a = async (x) => {
 	return x++;
 };
 ```
+
+```nim
+import macros, strutils
+
+macro toLookupTable(data: static[string]): untyped =
+  result = newTree(nnkBracket)
+  for w in data.split(';'):
+    result.add newLit(w)
+
+const
+  data = "mov;btc;cli;xor"
+  opcodes = toLookupTable(data)
+
+for o in opcodes:
+  echo o
+```
+
+```java
+BufferedWriter out = null;
+try {
+    out = new BufferedWriter(new FileWriter(”filename”, true));
+    out.write(”aString”);
+} catch (IOException e) {
+    // error processing code
+} finally {
+    if (out != null) {
+        out.close();
+    }
+}
+```
+
+```scss
+$font-stack: Helvetica, sans-serif;
+$primary-color: #333;
+
+body {
+	font: 100% $font-stack;
+	color: $primary-color;
+}
+```
+
+```rust
+fn main() {
+    let user = ("Adrian", 38);
+    println!("User {} is {} years old", user.0, user.1);
+
+    // tuples within tuples
+    let employee = (("Adrian", 38), "die Mobiliar");
+    println!("User {} is {} years old and works for {}", employee.0.1, employee.0.1, employee.1);
+}
+```
+
+```go
+func Example() {
+	ts := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		w.WriteHeader(http.StatusOK)
+		w.Write([]byte("hello world"))
+	}))
+	defer ts.Close()
+
+	resp, err := http.Get(ts.URL)
+	if err != nil {
+		fmt.Println(err)
+	}
+	defer resp.Body.Close()
+
+	fmt.Printf("%s\n", resp.Status)
+	fmt.Printf("%d\n", resp.StatusCode)
+}
+```
