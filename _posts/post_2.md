@@ -1,5 +1,6 @@
 ---
 title: Burger
+published: true
 author: eac
 date: 'Aug 28, 2021'
 categories:

@@ -1,5 +1,6 @@
 ---
 title: Taco
+published: true
 author: eac
 date: 'Jan 7, 2021'
 categories:
