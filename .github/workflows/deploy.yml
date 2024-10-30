@@ -32,6 +32,8 @@ jobs:
       #     pnpm run build
       - name: Setup Pages
         uses: actions/configure-pages@v3
+        env:
+          PUBLIC_COMMIT: '${{ github.sha }}'
         with:
           static_site_generator: 'sveltekit'
 
