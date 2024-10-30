@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { PageData } from './$types';
+	import { base } from '$app/paths';
 
 	export let data: PageData;
 </script>
@@ -12,7 +13,7 @@
 		<li class="post">
 			<p>{p.title}</p>
 			<p>{new Date(p.date).toDateString()}</p>
-			<a href={`/blog/${p.slug}`}>{p.slug}</a>
+			<a href={`${base}/blog/${p.slug}`}>{p.slug}</a>
 			<div>
 				{#each p.categories as c}
 					<span>{c}{' / '}</span>
