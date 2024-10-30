@@ -92,7 +92,7 @@ const config = {
 	preprocess: [vitePreprocess(), mdsvex(mdsvexOptions)],
 
 	kit: {
-		inlineStyleThreshold: 1024,
+		inlineStyleThreshold: 10240,
 		adapter: adapter(),
 		alias: {
 			'#': './src/components',
