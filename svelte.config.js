@@ -23,7 +23,7 @@ const mdsvexOptions = {
 		highlighter: async (code, lang, _meta) => {
 			return `{@html \`${shiki.codeToHtml(code, {
 				lang,
-				theme: 'ayu-dark',
+				theme: 'dark-plus',
 				transformers: [
 					{
 						pre(hast) {

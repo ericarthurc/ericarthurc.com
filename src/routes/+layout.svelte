@@ -5,5 +5,7 @@
 </script>
 
 <Dev />
-<Navbar />
-<slot />
+<div class="main-layout">
+	<Navbar />
+	<slot />
+</div>

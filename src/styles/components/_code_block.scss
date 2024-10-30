@@ -1,11 +1,13 @@
 .code-block {
-	margin: 3% 20px;
+	margin: 20px 0;
 	display: grid;
 	// justify-self: center;
 	// align-self: center;
 	min-width: fit-content;
+	border-radius: 0.5rem;
+	border: 1px solid #222227;
 	max-width: 800px;
-	background-color: #18181b;
+	background-color: #1b1b1f;
 	box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 
 	.code-block-header {
@@ -19,14 +21,15 @@
 		color: #e6e6e6;
 		margin-top: 5px;
 		margin-right: 10px;
-		font-size: 12px;
+		font-size: 13px;
 	}
 
 	pre.aero {
 		overflow-y: auto;
+		overflow-x: auto;
 		padding-left: 1rem;
 		padding-right: 1rem;
-		padding-top: 0;
+		padding-top: 10px;
 
 		display: flex;
 		margin-top: 0;
@@ -34,13 +37,32 @@
 		// margin-left: auto;
 		// margin-right: auto'
 		overflow: auto;
+		padding-bottom: 10px;
+
+		&::-webkit-scrollbar-track {
+			// -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+			border-radius: 10px;
+			background-color: transparent;
+		}
+
+		&::-webkit-scrollbar {
+			height: 6px;
+			background-color: transparent;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			border-radius: 0.25rem;
+			// -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+			background-color: #5b5c5c;
+		}
 	}
 
 	.aero code {
-		font-family: 'FiraCode';
+		font-family: 'GeistMono';
 		-webkit-font-smoothing: auto;
 		-moz-osx-font-smoothing: auto;
-		font-size: 0.8rem;
+		font-size: 14px;
+		font-weight: 500;
 		// padding: 0.125em 0.25em;
 		line-height: 20px;
 		border-radius: 0.25rem;
