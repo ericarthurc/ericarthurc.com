@@ -1,6 +1,7 @@
 ---
 title: Hotdog
 published: true
+featured: false
 author: eac
 date: 'Oct 10, 2022'
 categories:

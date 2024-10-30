@@ -1,6 +1,7 @@
 ---
 title: Pizza
 published: true
+featured: true
 author: eac
 date: 'Oct 25, 2024'
 categories:
