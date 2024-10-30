@@ -3,7 +3,7 @@
 	font-display: swap;
 	font-style: normal;
 	font-weight: normal;
-	src: url('/fonts/Inter.ttf');
+	src: local('/fonts/Inter.ttf');
 }
 
 @font-face {
@@ -11,7 +11,7 @@
 	font-display: swap;
 	font-style: normal;
 	font-weight: normal;
-	src: url('/fonts/FiraCode.ttf');
+	src: local('/fonts/FiraCode.ttf');
 }
 
 @font-face {
@@ -19,7 +19,7 @@
 	font-display: swap;
 	font-style: normal;
 	font-weight: normal;
-	src: url('/fonts/Geist.ttf');
+	src: local('/fonts/Geist.ttf');
 }
 
 @font-face {
@@ -27,5 +27,5 @@
 	font-display: swap;
 	font-style: normal;
 	font-weight: normal;
-	src: url('/fonts/GeistMono.ttf');
+	src: local('/fonts/GeistMono.ttf');
 }
