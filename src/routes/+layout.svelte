@@ -15,37 +15,3 @@
 	<Navbar />
 	<slot />
 </div>
-
-<style global lang="scss">
-	@font-face {
-		font-family: 'Inter';
-		font-display: swap;
-		font-style: normal;
-		font-weight: normal;
-		src: url('/fonts/Inter.ttf');
-	}
-
-	@font-face {
-		font-family: 'FiraCode';
-		font-display: swap;
-		font-style: normal;
-		font-weight: normal;
-		src: url('/fonts/FiraCode.ttf');
-	}
-
-	@font-face {
-		font-family: 'Geist';
-		font-display: swap;
-		font-style: normal;
-		font-weight: normal;
-		src: url('/fonts/Geist.ttf');
-	}
-
-	@font-face {
-		font-family: 'GeistMono';
-		font-display: swap;
-		font-style: normal;
-		font-weight: normal;
-		src: url('/fonts/GeistMono.ttf');
-	}
-</style>
