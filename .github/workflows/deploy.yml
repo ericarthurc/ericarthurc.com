@@ -29,7 +29,6 @@ jobs:
 
       - name: build
         run: |
-          echo $PUBLIC_COMMIT
           pnpm run build
 
       - name: Upload Artifacts

@@ -1,11 +1,13 @@
 <script lang="ts">
 	import { base } from '$app/paths';
-	import Dev from '#/Dev.svelte';
 	import Navbar from '#/Navbar.svelte';
 	import '@/styles/main.scss';
+	import Footer from '#/Footer.svelte';
+	import Dev from '#/Dev.svelte';
 </script>
 
 <svelte:head>
+	<title>Eric Christensen</title>
 	<link rel="preload" as="font" href={`${base}/fonts/Geist.ttf`} crossorigin="anonymous" />
 	<link rel="preload" as="font" href={`${base}/fonts/GeistMono.ttf`} crossorigin="anonymous" />
 </svelte:head>

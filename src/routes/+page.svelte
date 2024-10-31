@@ -1,6 +1,5 @@
 <script lang="ts">
 	import type { PageData } from './$types';
-	import { PUBLIC_COMMIT } from '$env/static/public';
 	import { base } from '$app/paths';
 
 	export let data: PageData;
@@ -23,5 +22,3 @@
 		</li>
 	{/each}
 </ul>
-
-<h5 style="font-weight: 500;color: #fa6988;">Compiled commit: {PUBLIC_COMMIT}</h5>

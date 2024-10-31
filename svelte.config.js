@@ -8,11 +8,12 @@ const shiki = await createHighlighter({
 	langs: [...Object.keys(bundledLanguages)]
 });
 
-/** @return {string} */
-const escape_svelty = (str) =>
-	str
-		.replace(/[{}`]/g, (c) => ({ '{': '&#123;', '}': '&#125;', '`': '&#96;' })[c])
-		.replace(/\\([trn])/g, '&#92;$1');
+// Used to parse around svelte specific injection characters
+// /** @return {string} */
+// const escape_svelty = (str) =>
+// 	str
+// 		.replace(/[{}`]/g, (c) => ({ '{': '&#123;', '}': '&#125;', '`': '&#96;' })[c])
+// 		.replace(/\\([trn])/g, '&#92;$1');
 
 /** @type {import('mdsvex').MdsvexOptions} */
 const mdsvexOptions = {
@@ -21,6 +22,7 @@ const mdsvexOptions = {
 	rehypePlugins: [],
 	highlight: {
 		highlighter: async (code, lang, _meta) => {
+			// warpping the return in the @html directive will escape svelte injection
 			return `{@html \`${shiki.codeToHtml(code, {
 				lang,
 				theme: 'dark-plus',
@@ -92,6 +94,7 @@ const config = {
 	preprocess: [vitePreprocess(), mdsvex(mdsvexOptions)],
 
 	kit: {
+		// inline all the css to the header <style> tag
 		inlineStyleThreshold: 10240,
 		adapter: adapter(),
 		alias: {
@@ -105,7 +108,7 @@ const config = {
 		},
 		prerender: {
 			entries: ['*'],
-			origin: 'http://ericchristensen.dev'
+			origin: 'https://ericchristensen.dev'
 		}
 	},
 
