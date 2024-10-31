@@ -24,9 +24,12 @@ jobs:
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
 
+      - name: Set environmental variables
+        run: echo "PUBLIC_COMMIT=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+
       - name: build
         run: |
-          echo "PUBLIC_COMMIT=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+          echo $PUBLIC_COMMIT
           pnpm run build
 
       - name: Upload Artifacts
