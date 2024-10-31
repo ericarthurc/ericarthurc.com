@@ -26,9 +26,8 @@ jobs:
 
       - name: build
         run: |
+          echo "PUBLIC_COMMIT=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
           pnpm run build
-        env:
-          PUBLIC_COMMIT: $(git rev-parse --short HEAD)
 
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
