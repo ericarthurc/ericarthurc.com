@@ -26,10 +26,10 @@ jobs:
 
       - name: build
         run: |
+          echo "SHA_SHORT=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
           pnpm run build
-          echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
         env:
-          PUBLIC_COMMIT: '${{ vars.GITHUB_OUTPUT }}'
+          PUBLIC_COMMIT: '${{ env.SHA_SHORT }}'
 
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
