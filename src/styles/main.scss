@@ -1,6 +1,9 @@
 @import url('./_fonts.scss');
 @import url('./components/_code_block.scss');
 
+// :root {
+// }
+
 *,
 *:before,
 *:after {
@@ -22,6 +25,19 @@ body {
 	padding: 0;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+
+::-webkit-scrollbar {
+	width: 0.35rem;
+}
+
+::-webkit-scrollbar,
+::-webkit-scrollbar-track {
+	background: #0d0d0d;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #a390ff;
 }
 
 h1,
