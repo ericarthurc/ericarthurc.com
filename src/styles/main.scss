@@ -1,8 +1,16 @@
 @import url('./_fonts.scss');
 @import url('./components/_code_block.scss');
 
-// :root {
-// }
+:root {
+	--c-white-1: #ffffff;
+	--c-grey-1: #8c8a91;
+	--c-black-1: #0e0e0e;
+	--c-black-2: #161616;
+	--c-purple-1: #a390ff;
+	--c-green-1: #dcff50;
+	--c-green-2: #bfd067;
+	--c-green-3: #b3e8b4;
+}
 
 *,
 *:before,
@@ -11,16 +19,15 @@
 }
 
 html {
-	background-color: #161616;
+	background-color: var(--c-black-1);
 	font-family: 'Geist', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
 		'Segoe UI Symbol', 'Noto Color Emoji';
-	// min-height: 100vh;
 	-webkit-font-smoothing: antialiased;
 }
 
 body {
 	min-height: 100vh;
-	color: #ffffff;
+	color: var(--c-white-1);
 	margin: 0;
 	padding: 0;
 	-webkit-font-smoothing: antialiased;
@@ -37,7 +44,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-	background: #a390ff;
+	background: var(--c-purple-1);
 }
 
 h1,
@@ -46,7 +53,7 @@ h3,
 h4,
 h5,
 h6 {
-	color: #a390ff;
+	color: var(--c-purple-1);
 }
 
 // header {}
@@ -72,7 +79,7 @@ h6 {
 		align-items: center;
 
 		.link-logo {
-			color: #ffffff;
+			color: var(--c-white-1);
 			// margin-right: 15px;
 			height: 28px;
 			width: 28px;
@@ -86,22 +93,22 @@ h6 {
 		.link {
 			text-decoration: none;
 			text-transform: none;
-			color: #ffffff;
+			color: var(--c-white-1);
 			font-size: 15px;
 			font-weight: 500;
 			margin: 0 18px 0 0;
 
 			&:hover {
-				color: #8c8a91;
+				color: var(--c-grey-1);
 			}
 			&:visited {
 			}
 
 			&.active {
-				color: #a390ff;
+				color: var(--c-purple-1);
 
 				.link-logo {
-					color: #dcff50;
+					color: var(--c-green-1);
 				}
 			}
 		}
@@ -115,10 +122,10 @@ h6 {
 	.post {
 		a {
 			text-decoration: none;
-			color: #b3e8b4;
+			color: var(--c-green-3);
 
 			&:hover {
-				color: #bfd067;
+				color: var(--c-green-2);
 			}
 		}
 	}
