@@ -96,7 +96,10 @@ h6 {
 			color: var(--c-white-1);
 			font-size: 15px;
 			font-weight: 500;
-			margin: 0 18px 0 0;
+
+			&:not(:last-child) {
+				margin: 0 18px 0 0;
+			}
 
 			&:hover {
 				color: var(--c-grey-1);
