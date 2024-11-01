@@ -2,7 +2,6 @@
 	import { base } from '$app/paths';
 	import Navbar from '#/Navbar.svelte';
 	import '@/styles/main.scss';
-	import Footer from '#/Footer.svelte';
 	import Dev from '#/Dev.svelte';
 </script>
 

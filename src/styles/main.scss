@@ -8,7 +8,7 @@
 }
 
 html {
-	background-color: #0a0a0a;
+	background-color: #161616;
 	font-family: 'Geist', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
 		'Segoe UI Symbol', 'Noto Color Emoji';
 	// min-height: 100vh;
@@ -22,6 +22,15 @@ body {
 	padding: 0;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: #a390ff;
 }
 
 // header {}
@@ -73,10 +82,10 @@ body {
 			}
 
 			&.active {
-				color: #ff5353;
+				color: #a390ff;
 
 				.link-logo {
-					color: #ff5353;
+					color: #dcff50;
 				}
 			}
 		}
@@ -90,10 +99,10 @@ body {
 	.post {
 		a {
 			text-decoration: none;
-			color: #2db35e;
+			color: #b3e8b4;
 
 			&:hover {
-				color: #0f8d3d;
+				color: #bfd067;
 			}
 		}
 	}
