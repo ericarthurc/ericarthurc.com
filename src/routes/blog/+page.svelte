@@ -1,7 +1,6 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 	import { base } from '$app/paths';
-	import { skillsSvgMap } from '^/skills-svg-map';
 
 	export let data: PageData;
 </script>
@@ -20,11 +19,13 @@
 					<span>{c}{' / '}</span>
 				{/each}
 			</div>
-			<div class="post-skills-container">
-				{#each p.skills as s}
-					{@html skillsSvgMap.get(s)}
-				{/each}
-			</div>
+			{#if p.skills_svgs}
+				<div class="post-skills-container">
+					{#each p.skills_svgs as s}
+						{@html s}
+					{/each}
+				</div>
+			{/if}
 		</li>
 	{/each}
 </ul>

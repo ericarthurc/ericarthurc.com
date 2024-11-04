@@ -11,7 +11,7 @@ skills:
   - svelte
   - typescript
   - javascript
-  - nim-dark
+  - nim
   - rust
   - golang
   - github-actions

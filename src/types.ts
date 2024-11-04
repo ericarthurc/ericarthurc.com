@@ -13,4 +13,5 @@ export type PostMeta = {
 	featured: boolean;
 	categories: string[];
 	skills: string[];
+	skills_svgs?: (string | undefined)[];
 };
