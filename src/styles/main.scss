@@ -50,7 +50,7 @@ body {
 // header {}
 
 .main-layout {
-	max-width: 42rem;
+	max-width: 56rem;
 	margin-left: auto;
 	margin-right: auto;
 	padding: 30px 4% 0 4%;
@@ -110,6 +110,9 @@ body {
 }
 
 .post-content-container {
+	word-wrap: break-word;
+	font-size: 18px;
+
 	h1 {
 		color: var(--c-purple-1);
 	}
@@ -134,6 +137,13 @@ body {
 		&:hover {
 			color: var(--c-green-2);
 		}
+	}
+
+	p,
+	li {
+		font-size: 17px;
+		line-height: 1.8;
+		-webkit-font-smoothing: antialiased;
 	}
 
 	p code {
