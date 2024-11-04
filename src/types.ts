@@ -12,4 +12,5 @@ export type PostMeta = {
 	published: boolean;
 	featured: boolean;
 	categories: string[];
+	skills: string[];
 };

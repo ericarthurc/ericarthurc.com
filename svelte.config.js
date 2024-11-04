@@ -97,6 +97,7 @@ const config = {
 		inlineStyleThreshold: 10240,
 		adapter: adapter(),
 		alias: {
+			'^': './src/components/icons',
 			'#': './src/components',
 			'@': './src',
 			$posts: './_posts'

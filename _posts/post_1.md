@@ -7,6 +7,14 @@ date: 'Oct 25, 2024'
 categories:
   - food
   - saucy
+skills:
+  - svelte
+  - typescript
+  - javascript
+  - nim-dark
+  - rust
+  - golang
+  - github-actions
 ---
 
 # Header
@@ -28,7 +36,7 @@ categories:
 </nav>
 ```
 
-```ts
+```typescript
 const materials = ['Hydrogen', 'Helium', 'Lithium', 'Beryllium'];
 
 console.log(materials.map((material) => material.length));

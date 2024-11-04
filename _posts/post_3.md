@@ -7,6 +7,12 @@ date: 'Jan 7, 2021'
 categories:
   - food
   - saucy
+skills:
+  - c++
+  - bash
+  - cloudflare
+  - deno
+  - github
 ---
 
 # Header

@@ -7,6 +7,13 @@ date: 'Aug 28, 2021'
 categories:
   - food
   - saucy
+skills:
+  - javascript
+  - html
+  - scss
+  - css
+  - nginx
+  - git
 ---
 
 # Header
@@ -15,12 +22,12 @@ categories:
 
 ### Headerss
 
-```ts
+```typescript
 const a: number = 50;
 ```
 
-<!-- ```javascript
+```javascript
 const a = async (x) => {
 	return x++;
 };
-``` -->
+```

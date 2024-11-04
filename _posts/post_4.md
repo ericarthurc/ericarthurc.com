@@ -7,6 +7,9 @@ date: 'Oct 10, 2022'
 categories:
   - food
   - saucy
+skills:
+  - c#
+  - c
 ---
 
 # Header
