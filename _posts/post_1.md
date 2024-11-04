@@ -7,6 +7,10 @@ date: 'Oct 25, 2024'
 categories:
   - food
   - saucy
+  - random
+  - blizzard
+  - silver
+  - attention
 skills:
   - svelte
   - typescript

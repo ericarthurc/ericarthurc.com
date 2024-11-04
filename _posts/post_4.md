@@ -5,8 +5,9 @@ featured: false
 author: eac
 date: 'Oct 10, 2022'
 categories:
-  - food
-  - saucy
+  - plug
+  - supplementary
+  - redundancy
 skills:
   - c#
   - c

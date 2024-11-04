@@ -5,8 +5,11 @@ featured: false
 author: eac
 date: 'Jan 7, 2021'
 categories:
-  - food
-  - saucy
+  - latest
+  - piano
+  - fox
+  - clue
+  - training
 skills:
   - c++
   - bash
