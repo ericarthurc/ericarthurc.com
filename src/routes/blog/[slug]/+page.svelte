@@ -20,4 +20,6 @@
 		</li>
 	{/each}
 </ul>
-<svelte:component this={data.content} />
+<div class="post-content-container">
+	{@render data.content?.()}
+</div>

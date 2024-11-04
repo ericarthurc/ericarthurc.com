@@ -1,7 +1,5 @@
-import type { Component } from 'svelte';
-
 export type Post = {
-	content: Component;
+	content: any;
 	meta: PostMeta;
 };
 

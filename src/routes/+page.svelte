@@ -1,7 +1,6 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 	import { base } from '$app/paths';
-	// import { skillsSvgMap } from '$lib/server/skills-svg-map';
 
 	export let data: PageData;
 </script>
