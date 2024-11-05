@@ -7,14 +7,18 @@
 
 <li class="post-listing" class:featured>
 	<div class="post-listing-header">
-		<a class="post-listing-anchor" href={`${base}/blog/${slug}`}>{title}</a>
-		<span class="post-listing-date">
+		<a class="post-listing-anchor" href={`${base}/blog/${slug}`}
+			><p class="post-listing-title">
+				{title}
+			</p>
+		</a>
+		<p class="post-listing-date">
 			{new Date(date).toLocaleDateString('en-us', {
 				month: 'long',
 				day: 'numeric',
 				year: 'numeric'
 			})}
-		</span>
+		</p>
 	</div>
 	<div class="post-listing-categories">
 		{#each categories as c}

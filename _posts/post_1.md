@@ -1,5 +1,5 @@
 ---
-title: Pizza
+title: Implementing string pattern
 published: true
 featured: true
 author: eac

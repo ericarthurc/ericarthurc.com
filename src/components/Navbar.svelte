@@ -5,7 +5,7 @@
 <header>
 	<div class="nav-container">
 		<nav class="nav-links">
-			<Link href="/">
+			<Link href="/" className="nav-logo-container">
 				<svg
 					class="link-logo"
 					xmlns="http://www.w3.org/2000/svg"

@@ -1,10 +1,11 @@
 <script lang="ts">
-	import type { PageData } from './$types';
+	import type { PageData } from '../$types';
 	import PostListing from '#/PostListing.svelte';
 
 	export let data: PageData;
 </script>
 
+<h2>Home</h2>
 <!-- 
 <h3>
 	I am an EHR application specialist in the medical field. I am certified in Epic's OpTime and

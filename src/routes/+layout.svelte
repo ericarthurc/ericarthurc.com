@@ -10,7 +10,5 @@
 	<link rel="preload" as="font" href={`${base}/fonts/GeistMono.ttf`} crossorigin="anonymous" />
 </svelte:head>
 
-<div class="main-layout">
-	<Navbar />
-	<slot />
-</div>
+<Navbar />
+<slot />

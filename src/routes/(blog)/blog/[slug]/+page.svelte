@@ -4,6 +4,7 @@
 	export let data: PageData;
 </script>
 
+<!-- 
 <h4>title: {data.meta.title}</h4>
 <h4>slug: {data.meta.slug}</h4>
 <h4>{new Date(data.meta.date).toDateString()}</h4>
@@ -19,7 +20,8 @@
 			<span>{value}</span>
 		</li>
 	{/each}
-</ul>
+</ul> -->
+
 <div class="post-content-container">
 	{@render data.content?.()}
 </div>
