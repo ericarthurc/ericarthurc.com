@@ -2,7 +2,7 @@
 @import url('./components/_code_block.scss');
 
 :root {
-	--c-bg: #161616;
+	--c-bg: #151515;
 
 	--c-white-1: #ffffff;
 	--c-grey-1: #8c8a91;
@@ -242,18 +242,20 @@ header {
 		}
 
 		.post-listing-categories {
-			margin-bottom: 10px;
+			margin-bottom: 11px;
+			display: flex;
+			flex-wrap: wrap;
+			gap: 7px;
 			.post-listing-category {
-				text-decoration: none;
 				color: var(--c-purple-1);
 				background-color: #272833;
 				border-radius: 0.35rem;
-				font-size: 14px;
+				font-size: 12px;
 				border: 1px solid #3a3a3d;
-				padding: 1px 5px;
+				padding: 3px 7px;
 
 				&:not(:last-child) {
-					margin-right: 7px;
+					// margin-right: 8px;
 				}
 			}
 		}
@@ -261,7 +263,7 @@ header {
 		.post-listing-skills {
 			svg {
 				&:not(:last-child) {
-					margin-right: 7px;
+					margin-right: 8px;
 				}
 
 				height: 20px;
