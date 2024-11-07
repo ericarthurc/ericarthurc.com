@@ -65,15 +65,19 @@ header {
 		width: 86px;
 		height: 86px;
 
-		#outer {
-			color: #a390ff;
+		#top {
+			color: #00aa6b;
 		}
 
-		#inner {
-			color: #bfd067;
-			transform-box: fill-box;
-			transform-origin: center center;
-			animation: spin 20s infinite linear;
+		#bottom {
+			color: #00aa6b;
+			// transform-box: fill-box;
+			// transform-origin: center center;
+			// animation: spin 20s infinite linear;
+		}
+
+		#outer {
+			color: #00aa6b;
 		}
 
 		@keyframes spin {
@@ -92,7 +96,7 @@ header {
 }
 
 .blog-layout {
-	max-width: 56rem;
+	max-width: 70rem;
 	margin-left: auto;
 	margin-right: auto;
 	padding: 0 4% 0 4%;
@@ -150,6 +154,7 @@ header {
 }
 
 .post-content-container {
+	width: 100%;
 	word-wrap: break-word;
 	font-size: 18px;
 
