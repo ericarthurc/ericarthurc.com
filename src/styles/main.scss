@@ -58,39 +58,25 @@ header {
 	display: grid;
 	justify-items: center;
 	padding-bottom: 10px;
+	height: 100px;
+	align-items: center;
 
-	svg {
-		width: 80px;
-		height: 80px;
-		border-radius: 50%;
-		animation: spin 50s linear;
+	#rings {
+		width: 100px;
+		height: 100px;
+		position: absolute;
+		animation: spin 20s linear infinite;
+		fill: #ffffff;
+	}
 
-		#bg {
-			fill: transparent;
-		}
+	#symbol {
+		width: 50px;
+		height: 50px;
+	}
 
-		#cir-top,
-		#cir-bottom {
-			fill: var(--c-green-logo);
-		}
-
-		#base {
-			fill: var(--c-green-logo);
-		}
-
-		@keyframes spin {
-			100% {
-				transform: rotate(360deg);
-			}
-		}
-
-		@keyframes fade {
-			50% {
-				opacity: 0%;
-			}
-			100% {
-				opacity: 90%;
-			}
+	@keyframes spin {
+		100% {
+			transform: rotate(360deg);
 		}
 	}
 }
