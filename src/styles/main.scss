@@ -9,6 +9,7 @@
 	--c-black-1: #0e0e0e;
 	--c-black-2: #161616;
 	--c-purple-1: #a390ff;
+	--c-green-logo: #00aa6b;
 	--c-green-1: #dcff50;
 	--c-green-2: #bfd067;
 	--c-green-3: #b3e8b4;
@@ -55,34 +56,40 @@ header {
 
 .header-logo {
 	display: grid;
-	// width: 50px;
-	// height: 50px;
 	justify-items: center;
 	padding-bottom: 10px;
-	// color: #a390ff;
 
 	svg {
-		width: 86px;
-		height: 86px;
+		width: 80px;
+		height: 80px;
+		border-radius: 50%;
+		animation: spin 50s linear;
 
-		#top {
-			color: #00aa6b;
+		#bg {
+			fill: transparent;
 		}
 
-		#bottom {
-			color: #00aa6b;
-			// transform-box: fill-box;
-			// transform-origin: center center;
-			// animation: spin 20s infinite linear;
+		#cir-top,
+		#cir-bottom {
+			fill: var(--c-green-logo);
 		}
 
-		#outer {
-			color: #00aa6b;
+		#base {
+			fill: var(--c-green-logo);
 		}
 
 		@keyframes spin {
 			100% {
 				transform: rotate(360deg);
+			}
+		}
+
+		@keyframes fade {
+			50% {
+				opacity: 0%;
+			}
+			100% {
+				opacity: 90%;
 			}
 		}
 	}
