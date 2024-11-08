@@ -13,6 +13,7 @@
 	--c-green-1: #dcff50;
 	--c-green-2: #bfd067;
 	--c-green-3: #b3e8b4;
+	--c-green-4: #00aa6b;
 }
 
 *,
@@ -206,7 +207,7 @@ header {
 		&.featured {
 			.post-listing-categories {
 				.post-listing-category {
-					color: var(--c-green-2);
+					color: var(--c-green-4);
 				}
 			}
 		}
@@ -246,7 +247,7 @@ header {
 			gap: 7px;
 			.post-listing-category {
 				color: var(--c-purple-1);
-				background-color: #272833;
+				background-color: #1f1f27;
 				border-radius: 0.35rem;
 				font-size: 12px;
 				border: 1px solid #3a3a3d;
