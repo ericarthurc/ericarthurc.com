@@ -109,7 +109,7 @@ const config = {
 		},
 		prerender: {
 			entries: ['*'],
-			origin: 'https://ericchristensen.dev'
+			origin: 'https://ericarthurc.com'
 		}
 	},
 
