@@ -1,7 +1,7 @@
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import { mdsvex, escapeSvelte } from 'mdsvex';
-import { bundledLanguages, bundledThemes, createHighlighter } from 'shiki';
+import { bundledLanguages, createHighlighter } from 'shiki';
 import fs from 'fs';
 
 const codeSandBoxTheme = JSON.parse(fs.readFileSync('syntax_themes/codesandbox-dark.json', 'utf8'));

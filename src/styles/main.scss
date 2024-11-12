@@ -2,7 +2,7 @@
 @import url('./components/_code_block.scss');
 
 :root {
-	--c-bg: #151515;
+	--bg: #101010;
 
 	--c-white-1: #ffffff;
 	--c-grey-1: #8c8a91;
@@ -14,6 +14,7 @@
 	--c-green-2: #bfd067;
 	--c-green-3: #b3e8b4;
 	--c-green-4: #00aa6b;
+
 }
 
 *,
@@ -23,7 +24,7 @@
 }
 
 html {
-	background-color: var(--c-bg);
+	background-color: var(--bg);
 	font-family: 'Geist', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
 		'Segoe UI Symbol', 'Noto Color Emoji';
 	-webkit-font-smoothing: antialiased;
@@ -127,20 +128,20 @@ header {
 				color: var(--c-purple-1);
 			}
 
-			// .link-logo {
-			// 	color: #ef7ebc;
-			// 	height: 32px;
-			// 	width: 32px;
+			.link-logo {
+				height: 32px;
+				width: 32px;
 
-			// 	&:hover {
-			// 		color: var(--c-purple-1);
-			// 		cursor: pointer;
-			// 	}
-			// }
+				&:hover {
+					color: var(--c-purple-1);
+					cursor: pointer;
+				}
+			}
 
 			&:hover {
 				color: var(--c-grey-1);
 			}
+
 			// &:visited {
 			// }
 		}
@@ -245,6 +246,7 @@ header {
 			display: flex;
 			flex-wrap: wrap;
 			gap: 7px;
+
 			.post-listing-category {
 				color: var(--c-purple-1);
 				background-color: #1f1f27;

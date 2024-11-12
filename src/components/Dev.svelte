@@ -4,7 +4,7 @@
 
 <div class="dev-bar">
 	<div class="dev-container">
-		<span>Compiled commit: {PUBLIC_COMMIT}</span>
+		<span>Alpha | Compiled commit: {PUBLIC_COMMIT}</span>
 	</div>
 </div>
 
@@ -17,5 +17,6 @@
 		font-size: 12px;
 		justify-content: center;
 		margin-bottom: -10px;
+		border-bottom: 1px solid var(--c-green-4);
 	}
 </style>
