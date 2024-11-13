@@ -1,49 +1,24 @@
-@import url('./_fonts.scss');
-@import url('./components/_code_block.scss');
+@use './fonts';
 
-$dark: #101010;
-$light: #ffffff;
-$white1: #ffffff;
-$grey1: #d4d3d8;
-$grey2: #8c8a91;
-$black1: #0e0e0e;
-$black2: #161616;
-$blue1: #759fc9;
-$blue2: #0a61cb;
-$blue3: #064088;
-$blue4: #08336a;
-$green1: #dcff50;
-$green2: #bfd067;
-$green3: #b3e8b4;
-$green4: #00aa6b;
-$purple1: #a390ff;
+// layouts
+@use './layouts/blog_layout';
 
-html {
-	--html-bg: #{$dark};
-	--body-font-c: #{$white1};
+// components
+@use './components/code_block';
 
-	--scr-bar-c: #{$blue2};
-
-	--nav-link-c: var(--body-font-c);
-	--nav-link-c-active: #{$purple1};
-
-	// post listing
-	--pst-title-c: #{$white1};
-	--pst-title-c-hover: #{$purple1};
-	--pst-date-c: #{$grey1};
-	--pst-cat-c: #{$purple1};
-	--pst-cat-feat-c: #{$blue1};
-}
-
-html.light {
-	--html-bg: #{$light};
-	--body-font-c: #{$black1};
-
-	--nav-link-c: var(--body-font-c);
-
-	// post listing
-	--pst-title-c: #{$black1};
-	--pst-date-c: #{$black2};
+:root {
+	--c-dark: #101010;
+	--c-light: #ffffff;
+	--c-white1: #ffffff;
+	--c-grey1: #d4d3d8;
+	--c-grey2: #8c8a91;
+	--c-black1: #0e0e0e;
+	--c-black2: #161616;
+	--c-green1: #dcff50;
+	--c-green2: #bfd067;
+	--c-green3: #b3e8b4;
+	--c-green4: #00aa6b;
+	--c-purple1: #a390ff;
 }
 
 *,
@@ -53,7 +28,7 @@ html.light {
 }
 
 html {
-	background-color: var(--html-bg);
+	background-color: var(--c-dark);
 	font-family: 'Geist', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
 		'Segoe UI Symbol', 'Noto Color Emoji';
 	-webkit-font-smoothing: antialiased;
@@ -61,7 +36,6 @@ html {
 
 body {
 	min-height: 100vh;
-	color: var(--body-font-c);
 	margin: 0;
 	padding: 0;
 	-webkit-font-smoothing: antialiased;
@@ -78,7 +52,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-	background: var(--scr-bar-c);
+	background: var(--c-green3);
 }
 
 header {
@@ -119,24 +93,8 @@ header {
 	padding: 0 4% 0 4%;
 }
 
-.log-layout {
-	max-width: 70rem;
-	margin-left: auto;
-	margin-right: auto;
-	padding: 0 4% 0 4%;
-}
-
 .nav-container {
-	// height: 45px;
-	// display: grid;
-	// background-color: #151618;
-
 	.nav {
-		display: grid;
-		grid-template-columns: auto auto auto;
-		// height: 100%;
-		align-self: center;
-
 		.nav-links {
 			display: flex;
 			justify-self: center;
@@ -144,24 +102,10 @@ header {
 			align-items: center;
 		}
 
-		.nav-logo-container {
+		.nav-link-box {
 			display: grid;
-		}
-
-		.link {
-			text-decoration: none;
-			text-transform: none;
-			color: var(--nav-link-c);
-			font-size: 15px;
-			font-weight: 500;
-
-			&:not(:last-child) {
-				margin: 0 18px 0 0;
-			}
-
-			&.active {
-				color: var(--nav-link-c-active);
-			}
+			gap: 5px;
+			justify-items: center;
 
 			.link-logo {
 				height: 27px;
@@ -172,54 +116,26 @@ header {
 				}
 			}
 		}
-	}
-}
 
-.post-content-container {
-	width: 100%;
-	word-wrap: break-word;
-	font-size: 18px;
-
-	h1 {
-		color: $purple1;
-	}
-
-	h2 {
-		color: $green3;
-	}
-
-	h3,
-	h4 {
-		color: $green1;
-	}
-
-	a {
-		text-decoration: none;
-		color: var(--c-purple-1);
-		background-color: #1b1b1f;
-		border-radius: 0.5rem;
-		border: 1px solid #222227;
-		padding: 1px 5px;
-
-		&:hover {
-			color: var(--c-green-2);
+		.nav-logo-container {
+			display: grid;
 		}
-	}
 
-	p,
-	li {
-		font-size: 17px;
-		line-height: 1.8;
-		-webkit-font-smoothing: antialiased;
-	}
+		.link {
+			text-decoration: none;
+			text-transform: none;
+			color: var(--c-white1);
+			font-size: 15px;
+			font-weight: 500;
 
-	p code {
-		text-decoration: none;
-		color: var(--c-green-2);
-		background-color: #1b1b1f;
-		border-radius: 0.5rem;
-		border: 1px solid #222227;
-		padding: 1px 5px;
+			&:not(:last-child) {
+				margin-right: 22px;
+			}
+
+			&.active {
+				color: var(--c-green1);
+			}
+		}
 	}
 }
 
@@ -235,7 +151,7 @@ header {
 		&.featured {
 			.post-listing-categories {
 				.post-listing-category {
-					color: var(--pst-cat-feat-c);
+					color: var(--c-green3);
 				}
 			}
 		}
@@ -249,20 +165,20 @@ header {
 			}
 
 			.post-listing-title {
-				color: var(--pst-title-c);
+				color: var(--c-white1);
 				font-weight: 500;
 				font-size: 21px;
 				margin: 0;
 				margin-bottom: 6px;
 
 				&:hover {
-					color: var(--pst-title-c-hover);
+					color: var(--c-purple1);
 				}
 			}
 
 			.post-listing-date {
 				font-size: 13px;
-				color: var(--pst-date-c);
+				color: var(--c-grey1);
 				margin: 0;
 				margin-bottom: 10px;
 			}
@@ -275,7 +191,7 @@ header {
 			gap: 7px;
 
 			.post-listing-category {
-				color: var(--pst-cat-c);
+				color: var(--c-purple1);
 				background-color: #1f1f27;
 				border-radius: 0.35rem;
 				font-size: 12px;

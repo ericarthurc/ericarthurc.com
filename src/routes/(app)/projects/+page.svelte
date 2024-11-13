@@ -1,1 +1,1 @@
-<h2>Projects</h2>
+<div class="project-layout"></div>
