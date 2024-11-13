@@ -10,6 +10,7 @@
 
 <style lang="scss">
 	.dev-bar {
+		color: #fff;
 		background-color: #1a1b20;
 		animation: wheelHueColor 20s infinite;
 		padding: 3px 0;
@@ -17,6 +18,6 @@
 		font-size: 12px;
 		justify-content: center;
 		margin-bottom: -10px;
-		border-bottom: 1px solid var(--c-green-4);
+		border-bottom: 1px solid #0a61cb;
 	}
 </style>

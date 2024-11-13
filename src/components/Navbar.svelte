@@ -1,101 +1,113 @@
-<script>
+<script lang="ts">
 	import Link from '#/Link.svelte';
+
+	let theme = 'dark';
+
+	try {
+		theme = localStorage.theme;
+	} catch (e) {}
+
+	const toggle = () => {
+		// @ts-ignore
+		const { classList } = document.querySelector('html');
+		if (classList.length === 0) {
+			theme = 'dark';
+		} else {
+			classList.remove(theme);
+			theme = theme === 'light' ? 'dark' : 'light';
+		}
+		classList.add(theme);
+
+		try {
+			localStorage.theme = theme;
+		} catch (e) {
+			// ignore
+		}
+	};
 </script>
 
 <header>
-	<!-- <div class="header-logo">
-		<svg
-			id="rings"
-			width="100%"
-			height="100%"
-			viewBox="0 0 1065 1065"
-			version="1.1"
-			xmlns="http://www.w3.org/2000/svg"
-			xmlns:xlink="http://www.w3.org/1999/xlink"
-			xml:space="preserve"
-			style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"
-		>
-			<g transform="matrix(1,0,0,1,32.034,32.034)">
-				<g transform="matrix(1.76832,0,0,1.76832,-384.16,-355.281)">
-					<g id="base-ring" transform="matrix(0.565509,0,0,0.565509,217.246,200.914)">
-						<path
-							d="M435.14,66.844C440.33,35.721 467.413,11.966 500,11.966C532.587,11.966 559.67,35.721 564.86,66.844C775.864,98.236 937.935,280.34 937.935,500C937.935,556.583 927.181,610.673 907.61,660.33C925.847,672.023 937.942,692.473 937.942,715.726C937.942,752.018 908.477,781.483 872.184,781.483C861.144,781.483 850.736,778.757 841.593,773.939C761.286,873.911 638.061,937.935 500,937.935C363.462,937.935 241.434,875.315 161.112,777.274C153.904,779.994 146.091,781.483 137.932,781.483C101.639,781.483 72.174,752.018 72.174,715.726C72.174,695.961 80.913,678.221 94.737,666.161C73.681,614.921 62.065,558.806 62.065,500C62.065,280.34 224.136,98.236 435.14,66.844ZM436.8,95.928C444.703,123.378 470.022,143.481 500,143.481C529.978,143.481 555.297,123.378 563.2,95.928C758.925,126.338 908.935,295.789 908.935,500C908.935,553.129 898.782,603.906 880.32,650.468C877.654,650.138 874.939,649.968 872.184,649.968C835.892,649.968 806.427,679.433 806.427,715.726C806.427,730.49 811.303,744.124 819.531,755.103C744.588,848.836 629.257,908.935 500,908.935C373.564,908.935 260.453,851.431 185.428,761.184C196.739,749.37 203.69,733.353 203.69,715.726C203.69,679.433 174.225,649.968 137.932,649.968C131.871,649.968 126.001,650.79 120.423,652.329C101.488,605.243 91.065,553.829 91.065,500C91.065,295.789 241.075,126.338 436.8,95.928Z"
-							style="fill:white;"
-						/>
-					</g>
-				</g>
-				<g transform="matrix(1.76832,0,0,1.76832,-384.16,-355.281)">
-					<g id="Upper-Bound" transform="matrix(0.675543,0,0,0.675543,162.229,145.897)">
-						<path
-							d="M500,54.625C745.809,54.625 945.375,254.191 945.375,500C945.375,745.809 745.809,945.375 500,945.375C254.191,945.375 54.625,745.809 54.625,500C54.625,254.191 254.191,54.625 500,54.625ZM500,73.625C735.323,73.625 926.375,264.677 926.375,500C926.375,735.323 735.323,926.375 500,926.375C264.677,926.375 73.625,735.323 73.625,500C73.625,264.677 264.677,73.625 500,73.625Z"
-							style="fill:none;"
-						/>
-					</g>
-				</g>
-			</g>
-		</svg>
-
-		<svg
-			id="symbol"
-			width="100%"
-			height="100%"
-			viewBox="0 0 656 670"
-			version="1.1"
-			xmlns="http://www.w3.org/2000/svg"
-			xmlns:xlink="http://www.w3.org/1999/xlink"
-			xml:space="preserve"
-			style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"
-		>
-			<g transform="matrix(1,0,0,1,-172.267,-165.25)">
-				<g transform="matrix(1,0,0,1,-7.10543e-14,6.25)">
-					<g transform="matrix(0.984925,0,0,0.984925,5.07538,11.2613)">
-						<circle cx="502.5" cy="249.5" r="99.5" style="fill:rgb(0,170,107);" />
-					</g>
-					<g transform="matrix(0.984925,0,0,0.984925,5.07538,254.261)">
-						<circle cx="502.5" cy="249.5" r="99.5" style="fill:rgb(0,170,107);" />
-					</g>
-					<path
-						d="M291.345,462L172.267,462L172.267,500.767C172.267,681.648 319.119,828.5 500,828.5C680.881,828.5 827.733,681.648 827.733,500.767L827.733,462L708.655,462L708.655,355L643.655,355L643.655,499.345C643.655,578.63 579.285,643 500,643C420.715,643 356.345,578.63 356.345,499.345L356.345,355L291.345,355L291.345,462ZM705.075,536C686.922,632.723 601.951,706 500,706C398.049,706 313.078,632.723 294.925,536L247.99,536C264.511,660.394 371.121,756.5 500,756.5C628.879,756.5 735.489,660.394 752.01,536L705.075,536Z"
-						style="fill:rgb(0,170,107);"
-					/>
-				</g>
-			</g>
-		</svg>
-	</div> -->
 	<div class="nav-container">
-		<nav class="nav-links">
-			<Link href="/" className="nav-logo-container">
-				<svg
-					class="link-logo"
-					width="100%"
-					height="100%"
-					viewBox="0 0 656 670"
-					version="1.1"
-					xmlns="http://www.w3.org/2000/svg"
-					xmlns:xlink="http://www.w3.org/1999/xlink"
-					xml:space="preserve"
-					style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"
-				>
-					<g transform="matrix(1,0,0,1,-172.267,-165.25)">
-						<g transform="matrix(1,0,0,1,-7.10543e-14,6.25)">
-							<g transform="matrix(0.984925,0,0,0.984925,5.07538,11.2613)">
-								<circle cx="502.5" cy="249.5" r="99.5" style="fill:rgb(0,170,107);" />
+		<nav class="nav">
+			<div></div>
+			<div class="nav-links">
+				<Link href="/" className="nav-logo-container">
+					<svg
+						class="link-logo"
+						width="100%"
+						height="100%"
+						viewBox="0 0 656 670"
+						version="1.1"
+						xmlns="http://www.w3.org/2000/svg"
+						xmlns:xlink="http://www.w3.org/1999/xlink"
+						xml:space="preserve"
+						style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"
+					>
+						<g transform="matrix(1,0,0,1,-172.267,-165.25)">
+							<g transform="matrix(1,0,0,1,-7.10543e-14,6.25)">
+								<g transform="matrix(0.984925,0,0,0.984925,5.07538,11.2613)">
+									<circle cx="502.5" cy="249.5" r="99.5" style="fill:rgb(0,170,107);" />
+								</g>
+								<g transform="matrix(0.984925,0,0,0.984925,5.07538,254.261)">
+									<circle cx="502.5" cy="249.5" r="99.5" style="fill:rgb(0,170,107);" />
+								</g>
+								<path
+									d="M291.345,462L172.267,462L172.267,500.767C172.267,681.648 319.119,828.5 500,828.5C680.881,828.5 827.733,681.648 827.733,500.767L827.733,462L708.655,462L708.655,355L643.655,355L643.655,499.345C643.655,578.63 579.285,643 500,643C420.715,643 356.345,578.63 356.345,499.345L356.345,355L291.345,355L291.345,462ZM705.075,536C686.922,632.723 601.951,706 500,706C398.049,706 313.078,632.723 294.925,536L247.99,536C264.511,660.394 371.121,756.5 500,756.5C628.879,756.5 735.489,660.394 752.01,536L705.075,536Z"
+									style="fill:rgb(0,170,107);"
+								/>
 							</g>
-							<g transform="matrix(0.984925,0,0,0.984925,5.07538,254.261)">
-								<circle cx="502.5" cy="249.5" r="99.5" style="fill:rgb(0,170,107);" />
-							</g>
-							<path
-								d="M291.345,462L172.267,462L172.267,500.767C172.267,681.648 319.119,828.5 500,828.5C680.881,828.5 827.733,681.648 827.733,500.767L827.733,462L708.655,462L708.655,355L643.655,355L643.655,499.345C643.655,578.63 579.285,643 500,643C420.715,643 356.345,578.63 356.345,499.345L356.345,355L291.345,355L291.345,462ZM705.075,536C686.922,632.723 601.951,706 500,706C398.049,706 313.078,632.723 294.925,536L247.99,536C264.511,660.394 371.121,756.5 500,756.5C628.879,756.5 735.489,660.394 752.01,536L705.075,536Z"
-								style="fill:rgb(0,170,107);"
-							/>
 						</g>
-					</g>
-				</svg>
-			</Link>
-			<Link href="/">Home</Link>
-			<Link href="/blog">Blog</Link>
-			<Link href="/projects">Projects</Link>
-			<Link href="/about-me">About Me</Link>
+					</svg>
+				</Link>
+				<!-- <Link href="/">Home</Link> -->
+				<Link href="/blog">Blog</Link>
+				<Link href="/projects">Projects</Link>
+				<Link href="/about-me">About</Link>
+			</div>
+			<div class="nav-th-toggle">
+				<button onclick={toggle} type="button" class="th-toggler icon" aria-label="Toggle theme">
+				</button>
+			</div>
 		</nav>
 	</div>
 </header>
+
+<style lang="scss">
+	.nav-th-toggle {
+		display: grid;
+
+		.th-toggler {
+			outline: none;
+			position: absolute;
+			// margin-top: 3px;
+			margin-right: 10px;
+			justify-self: end;
+			color: currentColor;
+			background-color: #5c4e4e80;
+			border: none;
+			// padding: 10px 10px;
+			border-radius: 1rem;
+		}
+
+		.icon {
+			cursor: pointer;
+			background-position: 50%;
+			background-repeat: no-repeat;
+			// background-size: 27px 27px;
+			width: 27px;
+			height: 27px;
+		}
+	}
+
+	:global(html.dark) {
+		.th-toggler {
+			background-image: url('/images/megid.svg');
+		}
+	}
+
+	:global(html.light) {
+		.th-toggler {
+			background-image: url('/images/grants.svg');
+		}
+	}
+</style>

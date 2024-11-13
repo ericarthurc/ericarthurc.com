@@ -1,4 +1,4 @@
-<div class="blog-layout">
-	<h1>Blog Layouts</h1>
+<div class="log-layout">
+	<h1>Log Layouts</h1>
 	<slot />
 </div>

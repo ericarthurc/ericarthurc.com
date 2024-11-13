@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 854 768" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-72.5,-120)">
+        <path d="M773.428,529L646,749.712L354,749.712L226.572,529L330.572,529L406,659.645L594,659.645L669.428,529L773.428,529ZM769.58,458L665.58,458L594,334.02L406,334.02L334.42,458L230.42,458L354,243.953L646,243.953L769.58,458Z" style="fill:rgb(189,16,255);"/>
+        <g transform="matrix(1,0,0,1,0.5,15)">
+            <circle cx="499.5" cy="155.5" r="50.5" style="fill:rgb(189,16,255);"/>
+        </g>
+        <g transform="matrix(1,0,0,1,0.5,682)">
+            <circle cx="499.5" cy="155.5" r="50.5" style="fill:rgb(189,16,255);"/>
+        </g>
+        <g transform="matrix(1,0,0,1,-376.5,344.5)">
+            <circle cx="499.5" cy="155.5" r="50.5" style="fill:rgb(189,16,255);"/>
+        </g>
+        <g transform="matrix(1,0,0,1,376.5,344.5)">
+            <circle cx="499.5" cy="155.5" r="50.5" style="fill:rgb(189,16,255);"/>
+        </g>
+        <g transform="matrix(1,0,0,1,241.5,99.5)">
+            <circle cx="499.5" cy="155.5" r="50.5" style="fill:rgb(189,16,255);"/>
+        </g>
+        <g transform="matrix(1,0,0,1,-243.5,99.5)">
+            <circle cx="499.5" cy="155.5" r="50.5" style="fill:rgb(189,16,255);"/>
+        </g>
+        <g transform="matrix(1,0,0,1,-243.5,586.5)">
+            <circle cx="499.5" cy="155.5" r="50.5" style="fill:rgb(189,16,255);"/>
+        </g>
+        <g transform="matrix(1,0,0,1,241.5,586.5)">
+            <circle cx="499.5" cy="155.5" r="50.5" style="fill:rgb(189,16,255);"/>
+        </g>
+        <g transform="matrix(2.06931,0,0,2.06931,-533.619,178.223)">
+            <circle cx="499.5" cy="155.5" r="50.5" style="fill:rgb(189,16,255);"/>
+        </g>
+    </g>
+</svg>

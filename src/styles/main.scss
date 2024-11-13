@@ -1,20 +1,49 @@
 @import url('./_fonts.scss');
 @import url('./components/_code_block.scss');
 
-:root {
-	--bg: #101010;
+$dark: #101010;
+$light: #ffffff;
+$white1: #ffffff;
+$grey1: #d4d3d8;
+$grey2: #8c8a91;
+$black1: #0e0e0e;
+$black2: #161616;
+$blue1: #759fc9;
+$blue2: #0a61cb;
+$blue3: #064088;
+$blue4: #08336a;
+$green1: #dcff50;
+$green2: #bfd067;
+$green3: #b3e8b4;
+$green4: #00aa6b;
+$purple1: #a390ff;
 
-	--c-white-1: #ffffff;
-	--c-grey-1: #8c8a91;
-	--c-black-1: #0e0e0e;
-	--c-black-2: #161616;
-	--c-purple-1: #a390ff;
-	--c-green-logo: #00aa6b;
-	--c-green-1: #dcff50;
-	--c-green-2: #bfd067;
-	--c-green-3: #b3e8b4;
-	--c-green-4: #00aa6b;
+html {
+	--html-bg: #{$dark};
+	--body-font-c: #{$white1};
 
+	--scr-bar-c: #{$blue2};
+
+	--nav-link-c: var(--body-font-c);
+	--nav-link-c-active: #{$purple1};
+
+	// post listing
+	--pst-title-c: #{$white1};
+	--pst-title-c-hover: #{$purple1};
+	--pst-date-c: #{$grey1};
+	--pst-cat-c: #{$purple1};
+	--pst-cat-feat-c: #{$blue1};
+}
+
+html.light {
+	--html-bg: #{$light};
+	--body-font-c: #{$black1};
+
+	--nav-link-c: var(--body-font-c);
+
+	// post listing
+	--pst-title-c: #{$black1};
+	--pst-date-c: #{$black2};
 }
 
 *,
@@ -24,7 +53,7 @@
 }
 
 html {
-	background-color: var(--bg);
+	background-color: var(--html-bg);
 	font-family: 'Geist', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
 		'Segoe UI Symbol', 'Noto Color Emoji';
 	-webkit-font-smoothing: antialiased;
@@ -32,7 +61,7 @@ html {
 
 body {
 	min-height: 100vh;
-	color: var(--c-white-1);
+	color: var(--body-font-c);
 	margin: 0;
 	padding: 0;
 	-webkit-font-smoothing: antialiased;
@@ -49,7 +78,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-	background: var(--c-purple-1);
+	background: var(--scr-bar-c);
 }
 
 header {
@@ -90,7 +119,7 @@ header {
 	padding: 0 4% 0 4%;
 }
 
-.blog-layout {
+.log-layout {
 	max-width: 70rem;
 	margin-left: auto;
 	margin-right: auto;
@@ -98,16 +127,22 @@ header {
 }
 
 .nav-container {
-	height: 45px;
-	display: grid;
+	// height: 45px;
+	// display: grid;
 	// background-color: #151618;
 
-	.nav-links {
-		display: flex;
-		height: 100%;
+	.nav {
+		display: grid;
+		grid-template-columns: auto auto auto;
+		// height: 100%;
 		align-self: center;
-		justify-self: center;
-		align-items: center;
+
+		.nav-links {
+			display: flex;
+			justify-self: center;
+			justify-items: center;
+			align-items: center;
+		}
 
 		.nav-logo-container {
 			display: grid;
@@ -116,7 +151,7 @@ header {
 		.link {
 			text-decoration: none;
 			text-transform: none;
-			color: var(--c-white-1);
+			color: var(--nav-link-c);
 			font-size: 15px;
 			font-weight: 500;
 
@@ -125,25 +160,17 @@ header {
 			}
 
 			&.active {
-				color: var(--c-purple-1);
+				color: var(--nav-link-c-active);
 			}
 
 			.link-logo {
-				height: 32px;
-				width: 32px;
+				height: 27px;
+				width: 27px;
 
 				&:hover {
-					color: var(--c-purple-1);
 					cursor: pointer;
 				}
 			}
-
-			&:hover {
-				color: var(--c-grey-1);
-			}
-
-			// &:visited {
-			// }
 		}
 	}
 }
@@ -154,16 +181,16 @@ header {
 	font-size: 18px;
 
 	h1 {
-		color: var(--c-purple-1);
+		color: $purple1;
 	}
 
 	h2 {
-		color: var(--c-green-3);
+		color: $green3;
 	}
 
 	h3,
 	h4 {
-		color: var(--c-green-1);
+		color: $green1;
 	}
 
 	a {
@@ -208,7 +235,7 @@ header {
 		&.featured {
 			.post-listing-categories {
 				.post-listing-category {
-					color: var(--c-green-4);
+					color: var(--pst-cat-feat-c);
 				}
 			}
 		}
@@ -222,20 +249,20 @@ header {
 			}
 
 			.post-listing-title {
-				color: var(--c-white-1);
+				color: var(--pst-title-c);
 				font-weight: 500;
 				font-size: 21px;
 				margin: 0;
 				margin-bottom: 6px;
 
 				&:hover {
-					color: var(--c-purple-1);
+					color: var(--pst-title-c-hover);
 				}
 			}
 
 			.post-listing-date {
 				font-size: 13px;
-				color: #d4d3d8;
+				color: var(--pst-date-c);
 				margin: 0;
 				margin-bottom: 10px;
 			}
@@ -248,16 +275,12 @@ header {
 			gap: 7px;
 
 			.post-listing-category {
-				color: var(--c-purple-1);
+				color: var(--pst-cat-c);
 				background-color: #1f1f27;
 				border-radius: 0.35rem;
 				font-size: 12px;
 				border: 1px solid #3a3a3d;
 				padding: 3px 7px;
-
-				&:not(:last-child) {
-					// margin-right: 8px;
-				}
 			}
 		}
 
