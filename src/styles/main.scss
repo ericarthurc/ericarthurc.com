@@ -22,25 +22,6 @@ $red1: #ff5050;
 $blue1: #50b9ff;
 
 :root {
-	--clr-pg-title: $purple1;
-	--c-dark: #0a0a0a;
-	--c-light: #ffffff;
-	--c-white1: #ffffff;
-	--c-grey1: #d4d4d4;
-	--c-grey2: #8c8a91;
-	--c-black1: #0e0e0e;
-	--c-black2: #161616;
-	--c-green1: #ffffff;
-	--c-green2: #ffffff;
-	--c-green3: #ffffff;
-	--c-green4: #ffffff;
-	--c-purple1: #ffffff;
-	// --c-green1: #dcff50;
-	// --c-green2: #bfd067;
-	// --c-green3: #b3e8b4;
-	// --c-green4: #00aa6b;
-	// --c-purple1: #a390ff;
-
 	--clr-html-bg: #{$dark};
 	--clr-body: #{$white1};
 	--clr-logo: #{$red1};
@@ -284,22 +265,24 @@ header {
 
 			.post-listing-category {
 				color: var(--clr-post-cat);
-				background-color: #1f1f27;
+				background-color: #1a1b20;
 				border-radius: 0.35rem;
 				font-size: 12px;
-				border: 1px solid #3a3a3d;
+				border: 1px solid #464853;
 				padding: 3px 7px;
 			}
 		}
 
 		.post-listing-skills {
 			svg {
+				height: 20px;
+				width: 20px;
+				border-radius: 0.35rem;
+				border: 1px solid #464853;
+
 				&:not(:last-child) {
 					margin-right: 8px;
 				}
-
-				height: 20px;
-				width: 20px;
 			}
 		}
 	}
