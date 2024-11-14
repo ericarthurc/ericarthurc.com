@@ -7,6 +7,7 @@ export type PostMeta = {
 	slug: string;
 	title: string;
 	date: Date;
+	snippet: string;
 	published: boolean;
 	featured: boolean;
 	categories: string[];

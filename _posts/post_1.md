@@ -4,6 +4,11 @@ published: true
 featured: true
 author: eac
 date: 'Oct 25, 2024'
+snippet: "Lorem markdownum nostris sit ait Dymantis Ceyx vulgus cauda _Atlantiades_ mente
+dolore ille. _Cepi capillos_, salve breve praeponere medias ille rogatque picta,
+vivacis in sparsi _intexere ferre tum_! Magis teque: qua est bracchia
+radiis? Lea et Ide inter corpore sinusque, modus parte cupidusque Aonides
+vocem mira. Hunc oris?"
 categories:
   - food
   - saucy

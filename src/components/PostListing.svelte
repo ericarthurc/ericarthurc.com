@@ -2,7 +2,15 @@
 	import { base } from '$app/paths';
 	import type { PostMeta } from '@/types';
 
-	let { slug, title, date, categories, skills_svgs, featured = false }: PostMeta = $props();
+	let {
+		slug,
+		title,
+		date,
+		snippet,
+		categories,
+		skills_svgs,
+		featured = false
+	}: PostMeta = $props();
 </script>
 
 <li class="post-listing" class:featured>
@@ -19,6 +27,7 @@
 				year: 'numeric'
 			})}
 		</p>
+		<p class="post-listing-snippet">{snippet}</p>
 	</div>
 	<div class="post-listing-categories">
 		{#each categories as c}

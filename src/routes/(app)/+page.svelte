@@ -5,25 +5,12 @@
 	export let data: PageData;
 </script>
 
-<div style="margin-bottom: 20px">
-	<h3
-		style="padding-left: 15px; border-left: 2px solid var(--c-green4);margin: 0;
-		margin-bottom: 20px;
-		font-weight: 300;
-		color: var(--c-green4);"
-	>
-		Home
-	</h3>
-	<div
-		style="border-left: 2px solid var(--c-purple1); padding-left: 15px; margin: 0; line-height: 1.5;"
-	>
-		<h4
-			style="margin: 0;
-		font-weight: 300;
-		color: var(--c-purple1); margin-bottom: 10px;"
-		>
-			[Ericarthurc]
-		</h4>
+<div class="page-title-box">
+	<h3>Home</h3>
+</div>
+<div class="home-info-box">
+	<div>
+		<h4>[Ericarthurc]</h4>
 		<p style="margin: 0;">
 			I’m a 29 year old EHR application specialist in the medical field, certified in Epic's OpTime
 			and Anesthesia modules, with a focus on security and analytics. With nearly a decade of coding
