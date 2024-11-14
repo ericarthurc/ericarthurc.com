@@ -22,6 +22,7 @@ $red1: #ff5050;
 $blue1: #50b9ff;
 
 :root {
+	--clr-pg-title: $purple1;
 	--c-dark: #0a0a0a;
 	--c-light: #ffffff;
 	--c-white1: #ffffff;
@@ -39,6 +40,26 @@ $blue1: #50b9ff;
 	// --c-green3: #b3e8b4;
 	// --c-green4: #00aa6b;
 	// --c-purple1: #a390ff;
+
+	--clr-html-bg: #{$dark};
+	--clr-body: #{$white1};
+	--clr-logo: #{$red1};
+	--clr-scrollbar-thumb: #{$red1};
+	--clr-page-title: #{$red1};
+	--clr-sec-border-pri: #{$white1};
+	--clr-sec-border-sec: #{$white1};
+	--clr-sec-border-ter: #{$white1};
+	--clr-listing-border: #{$red1};
+	--clr-listing-border-feat: #{$red1};
+	--clr-post-cat: #{$white1};
+	--clr-post-cat-feat: #{$red1};
+	--clr-post-title: #{$white1};
+	--clr-post-title-hover: #{$white1};
+	--clr-post-date: #{$white1};
+	--clr-post-snippet: #{$white1};
+	--clr-nav-link: #{$white1};
+	--clr-nav-link-hover: #{$red1};
+	--clr-nav-link-active: #{$red1};
 }
 
 *,
@@ -48,7 +69,7 @@ $blue1: #50b9ff;
 }
 
 html {
-	background-color: var(--c-dark);
+	background-color: var(--clr-html-bg);
 	font-family: 'Geist', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
 		'Segoe UI Symbol', 'Noto Color Emoji';
 	-webkit-font-smoothing: antialiased;
@@ -56,7 +77,7 @@ html {
 
 body {
 	min-height: 100vh;
-	color: var(--c-white1);
+	color: var(--clr-body);
 	margin: 0;
 	padding: 0;
 	-webkit-font-smoothing: antialiased;
@@ -73,7 +94,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-	background: var(--c-green3);
+	background: var(--clr-scrollbar-thumb);
 }
 
 header {
@@ -110,7 +131,7 @@ header {
 		.link {
 			text-decoration: none;
 			text-transform: none;
-			color: var(--c-white1);
+			color: var(--clr-nav-link);
 			font-size: 15px;
 			font-weight: 500;
 
@@ -118,8 +139,12 @@ header {
 				margin-right: 17px;
 			}
 
+			&:hover {
+				color: var(--clr-nav-link-hover);
+			}
+
 			&.active {
-				color: var(--c-green1);
+				color: var(--clr-nav-link-active);
 			}
 		}
 	}
@@ -133,19 +158,19 @@ header {
 }
 
 .page-title-box {
-	border-left: 2px solid var(--c-green4);
+	border-left: 2px solid var(--clr-sec-border-pri);
 	margin-bottom: 20px;
 	padding-left: 15px;
 
 	h3 {
 		margin: 0;
 		font-weight: 300;
-		color: var(--c-green4);
+		color: var(--clr-page-title);
 	}
 }
 
 .home-info-box {
-	border-left: 2px solid var(--c-purple1);
+	border-left: 2px solid var(--clr-sec-border-pri);
 	margin-bottom: 20px;
 	line-height: 1.5;
 	padding-left: 15px;
@@ -153,7 +178,7 @@ header {
 	h4 {
 		margin: 0;
 		font-weight: 300;
-		color: var(--c-purple1);
+		color: var(--clr-page-title);
 		margin-bottom: 10px;
 	}
 
@@ -164,26 +189,26 @@ header {
 
 .post-list-featured {
 	margin-bottom: 20px;
-	border-left: 2px solid var(--c-green3);
+	border-left: 2px solid var(--clr-sec-border-sec);
 	padding-left: 15px;
 
 	h4 {
 		margin: 0;
 		margin-bottom: 15px;
 		font-weight: 300;
-		color: var(--c-green3);
+		color: var();
 	}
 }
 
 .post-list-non-featured {
-	border-left: 2px solid var(--c-purple1);
+	border-left: 2px solid var(--clr-sec-border-pri);
 	padding-left: 15px;
 
 	h4 {
 		margin: 0;
 		margin-bottom: 15px;
 		font-weight: 300;
-		color: var(--c-purple1);
+		color: var();
 	}
 }
 
@@ -202,20 +227,14 @@ header {
 			margin-bottom: 30px;
 		}
 
-		border-left: 1px solid var(--c-light);
+		border-left: 1px solid var(--clr-listing-border);
 		padding-left: 15px;
 		line-height: 1;
 
 		&.featured {
 			.post-listing-categories {
 				.post-listing-category {
-					color: var(--c-green3);
-				}
-			}
-
-			@keyframes color-ani {
-				50% {
-					border-color: var(--c-green1);
+					color: var(--clr-post-cat-feat);
 				}
 			}
 		}
@@ -229,26 +248,27 @@ header {
 			}
 
 			.post-listing-title {
-				color: var(--c-white1);
+				color: var(--clr-post-title);
 				font-weight: 500;
 				font-size: 21px;
 				margin: 0;
 				margin-bottom: 6px;
 
 				&:hover {
-					color: var(--c-purple1);
+					color: var(--clr-post-title-hover);
 				}
 			}
 
 			.post-listing-date {
 				font-size: 13px;
-				color: var(--c-grey1);
+				color: var(--clr-post-date);
 				margin: 0;
 				margin-bottom: 10px;
 			}
 
 			.post-listing-snippet {
 				padding-left: 5px;
+				color: var(--clr-post-snippet);
 				margin: 0;
 				margin-bottom: 10px;
 				line-height: 1.3;
@@ -263,7 +283,7 @@ header {
 			gap: 7px;
 
 			.post-listing-category {
-				color: var(--c-purple1);
+				color: var(--clr-post-cat);
 				background-color: #1f1f27;
 				border-radius: 0.35rem;
 				font-size: 12px;

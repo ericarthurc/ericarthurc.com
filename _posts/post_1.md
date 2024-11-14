@@ -24,6 +24,8 @@ skills:
   - rust
   - golang
   - github-actions
+  - bash
+  - apple
 ---
 
 # Header

@@ -12,34 +12,35 @@
 	font-size: 18px;
 
 	h1 {
-		border-left: 2px solid var(--c-purple1);
+		border-left: 2px solid #fff;
 		padding-left: 15px;
-		color: var(--c-purple1);
+		color: var();
 	}
 
 	h2 {
-		border-left: 2px solid var(--c-green3);
+		border-left: 2px solid #fff;
 		padding-left: 15px;
-		color: var(--c-green3);
+		color: var();
 	}
 
 	h3,
 	h4 {
-		border-left: 2px solid var(--c-green1);
+		border-left: 2px solid #fff;
 		padding-left: 15px;
-		color: var(--c-green1);
+		color: var();
 	}
 
 	a {
 		text-decoration: none;
-		color: var(--c-purple1);
+		color: #fff;
 		background-color: #1b1b1f;
 		border-radius: 0.5rem;
-		border: 1px solid #222227;
+		font-size: 15px;
+		border: 1px solid #2d2d35;
 		padding: 1px 5px;
 
 		&:hover {
-			color: var(--c-green2);
+			color: var();
 		}
 	}
 
@@ -52,7 +53,7 @@
 
 	p code {
 		text-decoration: none;
-		color: var(--c-green2);
+		color: var();
 		background-color: #1b1b1f;
 		border-radius: 0.5rem;
 		border: 1px solid #222227;
