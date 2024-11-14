@@ -3,7 +3,7 @@
 	margin-left: auto;
 	margin-right: auto;
 	padding: 0 4% 0 4%;
-	color: var(--c-white1);
+	color: var(--c-gray1);
 }
 
 .post-content-container {
@@ -12,15 +12,21 @@
 	font-size: 18px;
 
 	h1 {
+		border-left: 2px solid var(--c-purple1);
+		padding-left: 15px;
 		color: var(--c-purple1);
 	}
 
 	h2 {
+		border-left: 2px solid var(--c-green3);
+		padding-left: 15px;
 		color: var(--c-green3);
 	}
 
 	h3,
 	h4 {
+		border-left: 2px solid var(--c-green1);
+		padding-left: 15px;
 		color: var(--c-green1);
 	}
 

@@ -7,10 +7,10 @@
 @use './components/code_block';
 
 :root {
-	--c-dark: #101010;
+	--c-dark: #0a0a0a;
 	--c-light: #ffffff;
 	--c-white1: #ffffff;
-	--c-grey1: #d4d3d8;
+	--c-grey1: #d4d4d4;
 	--c-grey2: #8c8a91;
 	--c-black1: #0e0e0e;
 	--c-black2: #161616;
@@ -36,6 +36,7 @@ html {
 
 body {
 	min-height: 100vh;
+	color: var(--c-grey1);
 	margin: 0;
 	padding: 0;
 	-webkit-font-smoothing: antialiased;
@@ -56,41 +57,20 @@ body {
 }
 
 header {
-	padding-top: 30px;
+	margin-top: 30px;
+	margin-bottom: 25px;
 }
 
 .header-logo {
 	display: grid;
 	justify-items: center;
-	padding-bottom: 10px;
-	height: 100px;
+	padding-bottom: 15px;
 	align-items: center;
-
-	#rings {
-		width: 100px;
-		height: 100px;
-		position: absolute;
-		animation: spin 20s linear infinite;
-		fill: #ffffff;
-	}
 
 	#symbol {
 		width: 50px;
-		height: 50px;
+		height: auto;
 	}
-
-	@keyframes spin {
-		100% {
-			transform: rotate(360deg);
-		}
-	}
-}
-
-.main-layout {
-	max-width: 42rem;
-	margin-left: auto;
-	margin-right: auto;
-	padding: 0 4% 0 4%;
 }
 
 .nav-container {
@@ -100,21 +80,6 @@ header {
 			justify-self: center;
 			justify-items: center;
 			align-items: center;
-		}
-
-		.nav-link-box {
-			display: grid;
-			gap: 5px;
-			justify-items: center;
-
-			.link-logo {
-				height: 27px;
-				width: 27px;
-
-				&:hover {
-					cursor: pointer;
-				}
-			}
 		}
 
 		.nav-logo-container {
@@ -129,7 +94,7 @@ header {
 			font-weight: 500;
 
 			&:not(:last-child) {
-				margin-right: 22px;
+				margin-right: 17px;
 			}
 
 			&.active {
@@ -139,13 +104,49 @@ header {
 	}
 }
 
+.main-layout {
+	max-width: 45rem;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0 4% 0 4%;
+}
+
+.post-list-featured {
+	margin-bottom: 20px;
+	border-left: 2px solid var(--c-green3);
+	padding-left: 15px;
+
+	h4 {
+		margin: 0;
+		margin-bottom: 15px;
+		font-weight: 300;
+		color: var(--c-green3);
+	}
+}
+
+.post-list-non-featured {
+	border-left: 2px solid var(--c-purple1);
+	padding-left: 15px;
+
+	h4 {
+		margin: 0;
+		margin-bottom: 15px;
+		font-weight: 300;
+		color: var(--c-purple1);
+	}
+}
+
 .post-list {
 	display: grid;
 	list-style-type: none;
 	padding: 0;
+	margin: 0;
 
 	.post-listing {
-		margin-bottom: 30px;
+		&:not(:last-child) {
+			margin-bottom: 30px;
+		}
+
 		line-height: 1;
 
 		&.featured {
