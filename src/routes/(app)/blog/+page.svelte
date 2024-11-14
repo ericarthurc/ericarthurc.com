@@ -14,7 +14,7 @@
 <div class="post-list-box">
 	{#if featuredPosts.length > 0}
 		<div class="post-list-featured">
-			<h4>[Featured Posts]</h4>
+			<h4>Featured Posts</h4>
 			<ul class="post-list">
 				{#each featuredPosts as p}
 					<PostListing {...p} />
@@ -24,7 +24,7 @@
 	{/if}
 	{#if nonFeaturedPosts.length > 0}
 		<div class="post-list-non-featured">
-			<h4>[Posts]</h4>
+			<h4>Posts</h4>
 			<ul class="post-list">
 				{#each nonFeaturedPosts as p}
 					<PostListing {...p} />

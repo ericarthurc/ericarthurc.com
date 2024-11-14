@@ -18,6 +18,6 @@
 		font-size: 12px;
 		justify-content: center;
 		margin-bottom: -10px;
-		border-bottom: 1px solid var(--c-green1);
+		border-bottom: 1px solid #464853;
 	}
 </style>
