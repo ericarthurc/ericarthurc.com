@@ -8,7 +8,7 @@
 <div style="margin-bottom: 20px">
 	<h3
 		style="padding-left: 15px; border-left: 2px solid var(--c-green4);margin: 0;
-		margin-bottom: 15px;
+		margin-bottom: 20px;
 		font-weight: 300;
 		color: var(--c-green4);"
 	>

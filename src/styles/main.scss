@@ -75,11 +75,11 @@ header {
 
 .nav-container {
 	.nav {
+		display: grid;
+
 		.nav-links {
 			display: flex;
 			justify-self: center;
-			justify-items: center;
-			align-items: center;
 		}
 
 		.nav-logo-container {
