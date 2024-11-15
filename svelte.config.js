@@ -23,7 +23,7 @@ const mdsvexOptions = {
 			return `{@html \`${escapeSvelte(
 				shiki.codeToHtml(code, {
 					lang,
-					theme: 'GithubDark',
+					theme: 'github-dark',
 					transformers: [
 						{
 							pre(hast) {
