@@ -5,6 +5,7 @@ import { bundledLanguages, createHighlighter } from 'shiki';
 import fs from 'fs';
 
 const codeSandBoxTheme = JSON.parse(fs.readFileSync('syntax_themes/codesandbox-dark.json', 'utf8'));
+const githubDarkTheme = JSON.parse(fs.readFileSync('syntax_themes/github-dark.json', 'utf8'));
 
 const shiki = await createHighlighter({
 	themes: [codeSandBoxTheme],
@@ -22,7 +23,7 @@ const mdsvexOptions = {
 			return `{@html \`${escapeSvelte(
 				shiki.codeToHtml(code, {
 					lang,
-					theme: 'CodeSandbox',
+					theme: 'GithubDark',
 					transformers: [
 						{
 							pre(hast) {
