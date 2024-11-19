@@ -242,6 +242,13 @@ const skillsSvgMap = new Map(
 </svg>`,
 			keys: ['nginx']
 		},
+		{
+			svg: `<svg width="100%" height="100%" viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;">
+    <path d="M12,2.813C12,1.26 10.74,0 9.188,0L2.813,0C1.26,0 0,1.26 0,2.813L0,9.188C0,10.74 1.26,12 2.813,12L9.188,12C10.74,12 12,10.74 12,9.188L12,2.813Z" style="fill:rgb(26,27,32);"/>
+    <path d="M6,4C6.549,4 7,4.451 7,5L7,7C7,7.549 6.549,8 6,8C5.451,8 5,7.549 5,7L5,5C5,4.451 5.451,4 6,4M8.5,4L8.5,8L10.5,8M6.5,7.5L7,8M1.5,7.5C1.5,7.774 1.726,8 2,8L3,8C3.274,8 3.5,7.774 3.5,7.5L3.5,6.5C3.5,6.226 3.274,6 3,6L2,6C1.726,6 1.5,5.774 1.5,5.5L1.5,4.5C1.5,4.226 1.726,4 2,4L3,4C3.274,4 3.5,4.226 3.5,4.5" style="fill:none;fill-rule:nonzero;stroke:white;stroke-width:1px;"/>
+</svg>`,
+			keys: ['SQL']
+		},
 		{ svg: ``, keys: [] }
 	].flatMap(({ svg, keys }) => keys.map((key) => [key, svg]))
 );

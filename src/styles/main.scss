@@ -38,10 +38,10 @@ $orange2: #e48e71;
 	--clr-sec-border-pri: #{$blue3};
 	--clr-sec-border-sec: #{$orange2};
 	--clr-sec-border-ter: #{$white1};
-	--clr-listing-border: #{$blue1};
+	--clr-listing-border: #{$purple2};
 	--clr-listing-border-feat: #{$orange1};
 	--clr-post-cat: #{$white1};
-	--clr-post-cat-feat: #{$blue3};
+	--clr-post-cat-feat: #{$orange1};
 	--clr-post-title: #{$white1};
 	--clr-post-title-hover: #{$purple1};
 	--clr-post-title-hover-feat: #{$red2};
@@ -127,7 +127,7 @@ header {
 			font-weight: 500;
 
 			&:not(:last-child) {
-				margin-right: 17px;
+				margin-right: 18px;
 			}
 
 			&:hover {
@@ -154,6 +154,7 @@ header {
 	// padding-left: 15px;
 
 	h3 {
+		letter-spacing: 0.03rem;
 		font-size: 22px;
 		margin: 0;
 		// font-weight: 300;
@@ -167,6 +168,7 @@ header {
 	padding-left: 15px;
 
 	h4 {
+		letter-spacing: 0.03rem;
 		margin: 0;
 		font-size: 18px;
 		// font-weight: 300;
@@ -175,7 +177,7 @@ header {
 	}
 
 	p {
-		line-height: 1.5;
+		line-height: 1.7;
 		margin: 0;
 	}
 }
@@ -186,6 +188,7 @@ header {
 	padding-left: 15px;
 
 	h4 {
+		letter-spacing: 0.03rem;
 		margin: 0;
 		margin-bottom: 15px;
 		// font-weight: 300;
@@ -198,6 +201,7 @@ header {
 	padding-left: 15px;
 
 	h4 {
+		letter-spacing: 0.03rem;
 		margin: 0;
 		margin-bottom: 17px;
 		// font-weight: 300;
