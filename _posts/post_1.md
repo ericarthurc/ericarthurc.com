@@ -1,18 +1,14 @@
 ---
-title: Implementing string pattern
+title: String Interpolation
 published: true
 featured: true
 author: eac
 date: 'Oct 25, 2024'
-snippet: "Lorem markdownum nostris sit ait Dymantis Ceyx vulgus cauda _Atlantiades_ mente
-dolore ille. _Cepi capillos_, salve breve praeponere medias ille rogatque picta,
-vivacis in sparsi _intexere ferre tum_! Magis teque: qua est bracchia
-radiis? Lea et Ide inter corpore sinusque, modus parte cupidusque Aonides
-vocem mira. Hunc oris?"
+snippet: "String interpolation embeds variables directly in strings for dynamic, readable text. For example, Python's f-strings use {} to include variables or expressions seamlessly, simplifying output formatting."
 categories:
-  - food
-  - saucy
-  - random
+  - python
+  - premium
+  - print "Hello World"
   - blizzard
   - silver
   - attention
