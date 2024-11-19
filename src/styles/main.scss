@@ -20,27 +20,33 @@ $green4: #00aa6b;
 $purple1: #a390ff;
 $red1: #ff5050;
 $blue1: #50b9ff;
+$blue2: #7cddff;
+$blue3: #82aaff;
+$green5: #b9e88d;
+$red2: #f0644b;
+$purple2: #a792ea;
+$orange1: #ffcb6b;
 
 :root {
 	--clr-html-bg: #{$dark};
 	--clr-body: #{$white1};
-	--clr-logo: #{$red1};
-	--clr-scrollbar-thumb: #{$red1};
-	--clr-page-title: #{$red1};
+	--clr-logo: #{$blue3};
+	--clr-scrollbar-thumb: #{$blue3};
+	--clr-page-title: #{$blue3};
 	--clr-sec-border-pri: #{$white1};
 	--clr-sec-border-sec: #{$white1};
 	--clr-sec-border-ter: #{$white1};
-	--clr-listing-border: #{$red1};
-	--clr-listing-border-feat: #{$red1};
+	--clr-listing-border: #{$blue3};
+	--clr-listing-border-feat: #{$blue3};
 	--clr-post-cat: #{$white1};
-	--clr-post-cat-feat: #{$red1};
+	--clr-post-cat-feat: #{$blue3};
 	--clr-post-title: #{$white1};
 	--clr-post-title-hover: #{$white1};
 	--clr-post-date: #{$white1};
 	--clr-post-snippet: #{$white1};
 	--clr-nav-link: #{$white1};
-	--clr-nav-link-hover: #{$red1};
-	--clr-nav-link-active: #{$red1};
+	--clr-nav-link-hover: #{$blue3};
+	--clr-nav-link-active: #{$blue3};
 }
 
 *,
@@ -90,7 +96,7 @@ header {
 	align-items: center;
 
 	#symbol {
-		fill: $red1;
+		fill: var(--clr-logo);
 		width: 50px;
 		height: auto;
 	}
