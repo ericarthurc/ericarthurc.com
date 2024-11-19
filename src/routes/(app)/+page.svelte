@@ -9,14 +9,12 @@
 	<h3>Home</h3>
 </div>
 <div class="home-info-box">
-	<div>
-		<h4>Ericarthurc</h4>
-		<p>
-			I’m a 29 year old EHR application specialist in the medical field, certified in Epic's OpTime
-			and Anesthesia modules, with a focus on security and analytics. With nearly a decade of coding
-			experience, I have a deep interest in web technologies and the evolving landscape of HTTP.
-		</p>
-	</div>
+	<h4>Ericarthurc</h4>
+	<p>
+		I’m a 29 year old EHR application specialist in the medical field, certified in Epic's OpTime
+		and Anesthesia modules, with a focus on security and analytics. With nearly a decade of coding
+		experience, I have a deep interest in web technologies and the evolving landscape of HTTP.
+	</p>
 </div>
 
 {#if data.posts.length > 0}

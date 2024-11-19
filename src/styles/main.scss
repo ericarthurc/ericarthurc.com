@@ -7,6 +7,7 @@
 @use './components/code_block';
 
 $dark: #0a0a0a;
+$dark2: #111111;
 $light: #ffffff;
 $white1: #ffffff;
 $grey1: #d4d4d4;
@@ -17,33 +18,34 @@ $green1: #dcff50;
 $green2: #bfd067;
 $green3: #b3e8b4;
 $green4: #00aa6b;
+$green5: #b9e88d;
 $purple1: #a390ff;
+$purple2: #a792ea;
 $red1: #ff5050;
+$red2: #f0644b;
 $blue1: #50b9ff;
 $blue2: #7cddff;
 $blue3: #82aaff;
-$green5: #b9e88d;
-$red2: #f0644b;
-$purple2: #a792ea;
 $orange1: #ffcb6b;
+$orange2: #e48e71;
 
 :root {
-	--clr-html-bg: #{$dark};
+	--clr-html-bg: #{$dark2};
 	--clr-body: #{$white1};
-	--clr-logo: #{$blue3};
+	--clr-logo: #{$green5};
 	--clr-scrollbar-thumb: #{$blue3};
-	--clr-page-title: #{$blue3};
-	--clr-sec-border-pri: #{$white1};
-	--clr-sec-border-sec: #{$white1};
+	--clr-page-title: #{$orange1};
+	--clr-sec-border-pri: #{$blue3};
+	--clr-sec-border-sec: #{$orange2};
 	--clr-sec-border-ter: #{$white1};
-	--clr-listing-border: #{$blue3};
-	--clr-listing-border-feat: #{$blue3};
+	--clr-listing-border: #{$blue1};
+	--clr-listing-border-feat: #{$orange1};
 	--clr-post-cat: #{$white1};
 	--clr-post-cat-feat: #{$blue3};
 	--clr-post-title: #{$white1};
 	--clr-post-title-hover: #{$white1};
 	--clr-post-date: #{$white1};
-	--clr-post-snippet: #{$white1};
+	--clr-post-snippet: #{$grey1};
 	--clr-nav-link: #{$white1};
 	--clr-nav-link-hover: #{$blue3};
 	--clr-nav-link-active: #{$blue3};
@@ -145,13 +147,14 @@ header {
 }
 
 .page-title-box {
-	border-left: 2px solid var(--clr-sec-border-pri);
+	// border-left: 2px solid var(--clr-sec-border-pri);
 	margin-bottom: 20px;
-	padding-left: 15px;
+	// padding-left: 15px;
 
 	h3 {
+		font-size: 22px;
 		margin: 0;
-		font-weight: 300;
+		// font-weight: 300;
 		color: var(--clr-page-title);
 	}
 }
@@ -159,17 +162,18 @@ header {
 .home-info-box {
 	border-left: 2px solid var(--clr-sec-border-pri);
 	margin-bottom: 20px;
-	line-height: 1.5;
 	padding-left: 15px;
 
 	h4 {
 		margin: 0;
-		font-weight: 300;
-		color: var(--clr-page-title);
+		font-size: 18px;
+		// font-weight: 300;
+		// color: var(--clr-page-title);
 		margin-bottom: 10px;
 	}
 
 	p {
+		line-height: 1.5;
 		margin: 0;
 	}
 }
@@ -182,7 +186,7 @@ header {
 	h4 {
 		margin: 0;
 		margin-bottom: 15px;
-		font-weight: 300;
+		// font-weight: 300;
 		color: var();
 	}
 }
@@ -193,8 +197,8 @@ header {
 
 	h4 {
 		margin: 0;
-		margin-bottom: 15px;
-		font-weight: 300;
+		margin-bottom: 17px;
+		// font-weight: 300;
 		color: var();
 	}
 }
@@ -219,6 +223,7 @@ header {
 		line-height: 1;
 
 		&.featured {
+			border-left: 1px solid var(--clr-listing-border-feat);
 			.post-listing-categories {
 				.post-listing-category {
 					color: var(--clr-post-cat-feat);
