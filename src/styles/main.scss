@@ -32,7 +32,7 @@ $orange2: #e48e71;
 :root {
 	--clr-html-bg: #{$dark2};
 	--clr-body: #{$white1};
-	--clr-logo: #{$green5};
+	--clr-logo: #{$white1};
 	--clr-scrollbar-thumb: #{$blue3};
 	--clr-page-title: #{$orange1};
 	--clr-sec-border-pri: #{$blue3};
@@ -269,7 +269,7 @@ header {
 		}
 
 		.post-listing-categories {
-			margin-bottom: 11px;
+			margin-bottom: 7px;
 			display: flex;
 			flex-wrap: wrap;
 			gap: 7px;
@@ -285,15 +285,18 @@ header {
 		}
 
 		.post-listing-skills {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 7px;
 			svg {
 				height: 20px;
 				width: 20px;
 				border-radius: 0.35rem;
 				border: 1px solid #464853;
 
-				&:not(:last-child) {
-					margin-right: 8px;
-				}
+				// &:not(:last-child) {
+				// 	margin-right: 8px;
+				// }
 			}
 		}
 	}

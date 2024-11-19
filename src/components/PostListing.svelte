@@ -27,6 +27,9 @@
 				year: 'numeric'
 			})}
 		</p>
+		<!-- {#if featured}
+			<p class="post-listing-snippet">{snippet}</p>
+		{/if} -->
 		<p class="post-listing-snippet">{snippet}</p>
 	</div>
 	<div class="post-listing-categories">
