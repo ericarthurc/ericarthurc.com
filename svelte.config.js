@@ -8,7 +8,7 @@ const codeSandBoxTheme = JSON.parse(fs.readFileSync('syntax_themes/codesandbox-d
 const githubDarkTheme = JSON.parse(fs.readFileSync('syntax_themes/github-dark.json', 'utf8'));
 
 const shiki = await createHighlighter({
-	themes: [codeSandBoxTheme, ...Object.keys(bundledThemes)],
+	themes: [...Object.keys(bundledThemes)],
 	langs: [...Object.keys(bundledLanguages)]
 });
 
