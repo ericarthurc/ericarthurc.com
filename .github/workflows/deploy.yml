@@ -5,6 +5,7 @@ on:
 
 jobs:
   build_site:
+    environment: github-pages
     env:
       SUPABASE_SERVICE: ${{ secrets.SUPABASE_SERVICE }}
     runs-on: ubuntu-latest
