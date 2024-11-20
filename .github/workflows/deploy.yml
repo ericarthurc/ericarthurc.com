@@ -25,11 +25,11 @@ jobs:
         run: pnpm install --no-frozen-lockfile
 
       - name: Set environmental variables
+        env:
+          SUPABASE_SERVICE: ${{ secrets.SUPABASE_SERVICE }}
         run: echo "PUBLIC_COMMIT=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
 
       - name: build
-        env:
-          SUPABASE_SERVICE: ${{ secrets.SUPABASE_SERVICE }}
         run: |
           pnpm run build
 
