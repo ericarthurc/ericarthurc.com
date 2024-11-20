@@ -5,6 +5,8 @@ on:
 
 jobs:
   build_site:
+    env:
+      SUPABASE_SERVICE: ${{ secrets.SUPABASE_SERVICE }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -26,8 +28,6 @@ jobs:
 
       - name: Set environmental variables
         run: echo "PUBLIC_COMMIT=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
-        with:
-          SUPABASE_SERVICE: ${{ secrets.SUPABASE_SERVICE }}
 
       - name: build
         run: pnpm run build
