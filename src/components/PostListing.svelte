@@ -4,7 +4,7 @@
 	import type { PostMeta } from '@/types';
 
 	async function fetchPostViews() {
-		return await supabase.from('post_views_counter').select().eq('slug', slug);
+		return await supabase.from('post_views_counter').select().eq('slug', slug).maybeSingle();
 	}
 
 	let {
@@ -34,11 +34,12 @@
 				})}
 			</p>
 			<span>&nbsp;～&nbsp;</span>
-			<span class="post-listing-count-suffix">views:&nbsp;</span>
+			<span class="post-listing-count-suffix">Views:&nbsp;</span>
 			{#await fetchPostViews()}
 				<span class="post-listing-count"></span>
 			{:then post}
-				<span class="post-listing-count">{post.data[0]?.count || 0}</span>
+				{#if post}
+					<span class="post-listing-count">{post.data?.count || 0}</span>{/if}
 			{/await}
 		</div>
 		{#if featured}
