@@ -2,9 +2,6 @@ name: Deploy to GitHub Pages
 
 on:
   workflow_dispatch:
-    secrets:
-      SUPABASE_SERVICE:
-        required: true
 
 jobs:
   build_site:
@@ -29,11 +26,11 @@ jobs:
 
       - name: Set environmental variables
         run: echo "PUBLIC_COMMIT=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+        with:
+          SUPABASE_SERVICE: ${{ secrets.SUPABASE_SERVICE }}
 
       - name: build
         run: pnpm run build
-        env:
-          SUPABASE_SERVICE: ${{ secrets.SUPABASE_SERVICE }}
 
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
