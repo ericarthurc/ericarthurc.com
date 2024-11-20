@@ -25,13 +25,12 @@ jobs:
         run: pnpm install --no-frozen-lockfile
 
       - name: Set environmental variables
-        env:
-          SUPABASE_SERVICE: ${{ secrets.SUPABASE_SERVICE }}
         run: echo "PUBLIC_COMMIT=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
 
       - name: build
-        run: |
-          pnpm run build
+        run: pnpm run build
+        env:
+          SUPABASE_SERVICE: ${{ secrets.SUPABASE_SERVICE }}
 
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
