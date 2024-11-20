@@ -269,11 +269,26 @@ header {
 				}
 			}
 
+			.post-listing-info-box {
+				display: flex;
+				margin-bottom: 7px;
+				// grid-template-columns: auto auto;
+			}
+
 			.post-listing-date {
 				font-size: 13px;
 				color: var(--clr-post-date);
 				margin: 0;
-				margin-bottom: 7px;
+				// margin-bottom: 7px;
+			}
+
+			.post-listing-count {
+				font-size: 13px;
+				width: 30px;
+			}
+
+			.post-listing-count-suffix {
+				font-size: 13px;
 			}
 
 			.post-listing-snippet {

@@ -1,6 +1,11 @@
 <script lang="ts">
 	import { base } from '$app/paths';
+	import { supabase } from '$lib/supbaseClient';
 	import type { PostMeta } from '@/types';
+
+	async function fetchPostViews() {
+		return await supabase.from('post_views_counter').select().eq('slug', slug);
+	}
 
 	let {
 		slug,
@@ -20,13 +25,22 @@
 				{title}
 			</p>
 		</a>
-		<p class="post-listing-date">
-			{new Date(date).toLocaleDateString('en-us', {
-				month: 'long',
-				day: 'numeric',
-				year: 'numeric'
-			})}
-		</p>
+		<div class="post-listing-info-box">
+			<p class="post-listing-date">
+				{new Date(date).toLocaleDateString('en-us', {
+					month: 'long',
+					day: 'numeric',
+					year: 'numeric'
+				})}
+			</p>
+			<span>&nbsp;～&nbsp;</span>
+			<span class="post-listing-count-suffix">views:&nbsp;</span>
+			{#await fetchPostViews()}
+				<span class="post-listing-count"></span>
+			{:then post}
+				<span class="post-listing-count">{post.data[0]?.count || 0}</span>
+			{/await}
+		</div>
 		{#if featured}
 			<p class="post-listing-snippet">{snippet}</p>
 		{/if}
