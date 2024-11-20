@@ -2,6 +2,9 @@ name: Deploy to GitHub Pages
 
 on:
   workflow_dispatch:
+    secrets:
+      SUPABASE_SERVICE:
+        required: true
 
 jobs:
   build_site:
