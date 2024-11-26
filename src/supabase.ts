@@ -28,27 +28,27 @@ export type Database = {
 	};
 	public: {
 		Tables: {
-			post_views_counter: {
+			posts: {
 				Row: {
-					count: number;
 					created_at: string;
 					id: number;
 					slug: string;
 					updated_at: string | null;
+					views: number;
 				};
 				Insert: {
-					count: number;
 					created_at?: string;
 					id?: number;
 					slug: string;
 					updated_at?: string | null;
+					views?: number;
 				};
 				Update: {
-					count?: number;
 					created_at?: string;
 					id?: number;
 					slug?: string;
 					updated_at?: string | null;
+					views?: number;
 				};
 				Relationships: [];
 			};

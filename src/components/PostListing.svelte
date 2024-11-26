@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { base } from '$app/paths';
-	import { supabase } from '$lib/supbaseClient';
+	import { supabaseAnon } from '$lib/supbaseClient';
 	import type { PostMeta } from '@/types';
 
 	async function fetchPostViews() {
-		return await supabase.from('post_views_counter').select().eq('slug', slug).maybeSingle();
+		return await supabaseAnon.from('posts').select().eq('slug', slug).maybeSingle();
 	}
 
 	let {
@@ -39,7 +39,7 @@
 				<span class="post-listing-count"></span>
 			{:then post}
 				{#if post}
-					<span class="post-listing-count">{post.data?.count || 0}</span>{/if}
+					<span class="post-listing-count">{post.data?.views || 0}</span>{/if}
 			{/await}
 		</div>
 		{#if featured}

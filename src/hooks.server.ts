@@ -1,4 +1,3 @@
-import { supabase } from '$lib/supbaseClient';
 import type { PostMeta } from '@/types';
 import { SUPABASE_SERVICE } from '$env/static/private';
 
@@ -31,7 +30,7 @@ async function loader() {
 	await Promise.all(
 		postSlugs.map(async (p) => {
 			try {
-				await supabasePrivate.from('post_views_counter').insert({ slug: p.slug, count: 0 });
+				await supabasePrivate.from('posts').insert({ slug: p.slug, views: 0 });
 				counter++;
 			} catch (_) {}
 		})
