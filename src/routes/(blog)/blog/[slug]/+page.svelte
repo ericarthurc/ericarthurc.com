@@ -16,7 +16,7 @@
 			return;
 		}
 
-		const response_two = await supabaseAnon
+		supabaseAnon
 			.from('posts')
 			.update({ views: (response.data?.views || 0) + 1 })
 			.eq('slug', data.meta.slug);
