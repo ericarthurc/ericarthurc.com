@@ -1,4 +1,5 @@
-import adapter from '@sveltejs/adapter-static';
+// import adapter from '@sveltejs/adapter-static';
+import adapter from '@sveltejs/adapter-netlify';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import { mdsvex, escapeSvelte } from 'mdsvex';
 import { bundledLanguages, bundledThemes, createHighlighter } from 'shiki';
@@ -96,7 +97,10 @@ const config = {
 	kit: {
 		// inline all the css to the header <style> tag
 		inlineStyleThreshold: 10240,
-		adapter: adapter(),
+		adapter: adapter({
+			edge: false,
+			split: false
+		}),
 		alias: {
 			$lib: './src/lib',
 			'^': './src/components/icons',
