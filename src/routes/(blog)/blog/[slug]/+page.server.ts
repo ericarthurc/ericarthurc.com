@@ -2,7 +2,7 @@ import { error } from '@sveltejs/kit';
 import type { EntryGenerator, PageServerLoad } from './$types';
 import type { Post, PostMeta } from '@/types';
 import { render } from 'svelte/server';
-import prisma from '$lib/server/xata';
+// import prisma from '$lib/server/xata';
 
 export const load: PageServerLoad = async ({ params }): Promise<Post> => {
 	const post = await import(`$posts/${params.slug}.md`);
@@ -11,12 +11,10 @@ export const load: PageServerLoad = async ({ params }): Promise<Post> => {
 		error(404, 'Not found');
 	}
 
-	(async () => {
-		await prisma.post_views.update({
-			where: { slug: params.slug },
-			data: { views: { increment: 1 } }
-		});
-	})();
+	// (async () => {
+	// 	await fetch(`/api/posts/${params.slug}`, { method: 'PATCH' });
+	// 	console.log('HERE');
+	// })();
 
 	return {
 		content: render(post.default).body,
