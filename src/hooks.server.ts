@@ -1,13 +1,13 @@
+import prisma from '$lib/server/xata';
 import type { PostMeta } from '@/types';
-import { SUPABASE_SERVICE } from '$env/static/private';
+// import { SUPABASE_SERVICE } from '$env/static/private';
+// import { createClient } from '@supabase/supabase-js';
+// import type { Database } from '@/supabase';
 
-import { createClient } from '@supabase/supabase-js';
-import type { Database } from '@/supabase';
-
-export const supabasePrivate = createClient<Database>(
-	'https://ahixgcqifvllefpafjim.supabase.co',
-	SUPABASE_SERVICE
-);
+// export const supabasePrivate = createClient<Database>(
+// 	'https://ahixgcqifvllefpafjim.supabase.co',
+// 	SUPABASE_SERVICE
+// );
 
 async function loader() {
 	const paths = import.meta.glob(`$posts/*.md`, { eager: true });
@@ -26,16 +26,15 @@ async function loader() {
 		return posts;
 	}, []);
 
-	let counter = 0;
-	await Promise.all(
-		postSlugs.map(async (p) => {
-			try {
-				await supabasePrivate.from('posts').insert({ slug: p.slug, views: 0 });
-				counter++;
-			} catch (_) {}
-		})
-	);
-	console.log(`Posts Generated: ${counter}`);
+	try {
+		const ids = await prisma.post_views.createManyAndReturn({
+			select: { xata_id: true },
+			data: postSlugs
+		});
+		console.log(ids);
+	} catch (error) {
+		console.log('No new posts generated in database');
+	}
 }
 
 await loader();

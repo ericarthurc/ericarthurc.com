@@ -1,11 +1,6 @@
 <script lang="ts">
 	import { base } from '$app/paths';
-	import { supabaseAnon } from '$lib/supbaseClient';
 	import type { PostMeta } from '@/types';
-
-	async function fetchPostViews() {
-		return await supabaseAnon.from('posts').select().eq('slug', slug).maybeSingle();
-	}
 
 	let {
 		slug,
@@ -19,7 +14,7 @@
 </script>
 
 <li class="post-listing" class:featured>
-	<div class="post-listing-header">
+	<div class="post-listing-header" data-sveltekit-preload-data="false">
 		<a class="post-listing-anchor" href={`${base}/blog/${slug}`}
 			><p class="post-listing-title">
 				{title}
@@ -33,14 +28,14 @@
 					year: 'numeric'
 				})}
 			</p>
-			<span>&nbsp;～&nbsp;</span>
+			<span>&nbsp;&nbsp;</span>
 			<span class="post-listing-count-suffix">Views:&nbsp;</span>
-			{#await fetchPostViews()}
+			<!-- {#await fetchPostViews()}
 				<span class="post-listing-count"></span>
 			{:then post}
 				{#if post}
 					<span class="post-listing-count">{post.data?.views || 0}</span>{/if}
-			{/await}
+			{/await} -->
 		</div>
 		{#if featured}
 			<p class="post-listing-snippet">{snippet}</p>
