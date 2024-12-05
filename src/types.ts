@@ -13,4 +13,5 @@ export type PostMeta = {
 	categories: string[];
 	skills: string[];
 	skills_svgs?: (string | undefined)[];
+	views?: number;
 };

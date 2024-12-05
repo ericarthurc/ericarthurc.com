@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { PageData } from './$types';
-	import PostListing from '#/PostListing.svelte';
+	import PostContainer from '#/PostContainer.svelte';
 
 	export let data: PageData;
 </script>
@@ -16,14 +16,4 @@
 		experience, I have a deep interest in web technologies and the evolving landscape of HTTP.
 	</p>
 </div>
-
-{#if data.posts.length > 0}
-	<div class="post-list-featured">
-		<h4>Featured Posts</h4>
-		<ul class="post-list">
-			{#each data.posts as p}
-				<PostListing {...p} />
-			{/each}
-		</ul>
-	</div>
-{/if}
+<PostContainer posts={data.posts} nonFeatured={false} />

@@ -1,54 +1,48 @@
 <script lang="ts">
 	import { base } from '$app/paths';
 	import type { PostMeta } from '@/types';
+	import { browser } from '$app/environment';
 
-	let {
-		slug,
-		title,
-		date,
-		snippet,
-		categories,
-		skills_svgs,
-		featured = false
-	}: PostMeta = $props();
+	interface Props {
+		meta: PostMeta;
+		views: number | undefined;
+	}
+
+	let { meta, views }: Props = $props();
 </script>
 
-<li class="post-listing" class:featured>
+<li class="post-listing" class:featured={meta.featured}>
 	<div class="post-listing-header" data-sveltekit-preload-data="false">
-		<a class="post-listing-anchor" href={`${base}/blog/${slug}`}
+		<a class="post-listing-anchor" href={`${base}/blog/${meta.slug}`}
 			><p class="post-listing-title">
-				{title}
+				{meta.title}
 			</p>
 		</a>
 		<div class="post-listing-info-box">
 			<p class="post-listing-date">
-				{new Date(date).toLocaleDateString('en-us', {
+				{new Date(meta.date).toLocaleDateString('en-us', {
 					month: 'long',
 					day: 'numeric',
 					year: 'numeric'
 				})}
 			</p>
-			<span>&nbsp;&nbsp;</span>
-			<span class="post-listing-count-suffix">Views:&nbsp;</span>
-			<!-- {#await fetchPostViews()}
-				<span class="post-listing-count"></span>
-			{:then post}
-				{#if post}
-					<span class="post-listing-count">{post.data?.views || 0}</span>{/if}
-			{/await} -->
+			{#if browser}
+				<span class="post-listing-views-suffix">&nbsp;&nbsp;Views:&nbsp;</span>
+				<span class="post-listing-views">{views}</span>
+			{/if}
 		</div>
-		{#if featured}
-			<p class="post-listing-snippet">{snippet}</p>
+		{#if meta.featured}
+			<p class="post-listing-snippet">{meta.snippet}</p>
 		{/if}
 	</div>
 	<div class="post-listing-categories">
-		{#each categories as c}
+		{#each meta.categories as c}
 			<span class="post-listing-category">{c}</span>
 		{/each}
 	</div>
-	{#if skills_svgs}
+	{#if meta.skills_svgs}
 		<div class="post-listing-skills">
-			{#each skills_svgs as s}
+			{#each meta.skills_svgs as s}
 				{@html s}
 			{/each}
 		</div>
