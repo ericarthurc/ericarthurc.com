@@ -12,10 +12,12 @@
 	let views_array: post_views[] | undefined = $state();
 
 	onMount(async () => {
-		const resp = await fetch(`/api/posts`, { method: 'GET' });
-		const xata_post = await resp.json();
+		try {
+			const resp = await fetch(`/api/posts`, { method: 'GET' });
+			const xata_post = await resp.json();
 
-		views_array = xata_post;
+			views_array = xata_post;
+		} catch (_error) {}
 	});
 
 	let { posts, nonFeatured }: Props = $props();

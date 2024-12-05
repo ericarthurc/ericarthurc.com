@@ -1,23 +1,21 @@
 <script lang="ts">
-	import { PUBLIC_COMMIT } from '$env/static/public';
 </script>
 
 <div class="dev-bar">
 	<div class="dev-container">
-		<span>Alpha | Compiled commit: {PUBLIC_COMMIT}</span>
+		<span>Merry Christmas!</span>
 	</div>
 </div>
 
 <style lang="scss">
 	.dev-bar {
 		color: #fff;
-		background-color: #1a1b20;
-		animation: wheelHueColor 20s infinite;
+		background-color: #2c2611;
 		padding: 3px 0;
 		display: flex;
-		font-size: 12px;
+		font-size: 14px;
 		justify-content: center;
 		margin-bottom: -10px;
-		border-bottom: 1px solid #464853;
+		border-bottom: 1px solid #796c47;
 	}
 </style>

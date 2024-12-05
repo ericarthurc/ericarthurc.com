@@ -6,6 +6,7 @@
 // components
 @use './components/code_block';
 
+// stock
 $dark: #0a0a0a;
 $dark2: #111111;
 $light: #ffffff;
@@ -29,29 +30,38 @@ $blue3: #82aaff;
 $orange1: #ffcb6b;
 $orange2: #e48e71;
 
+// christmas
+$christmas-green1: #63b948;
+$christmas-green2: #304829;
+$christmas-red1: #ff5050;
+$christmas-red2: #bc3734;
+$christmas-gold1: #f3d997;
+$christmas-gold2: #f3d997;
+
 :root {
 	--clr-html-bg: #{$dark2};
 	--clr-body: #{$white1};
-	--clr-logo: #{$red1};
+	--clr-logo: #{$christmas-red1};
 	--clr-scrollbar-thumb: #{$white1};
-	--clr-page-title: #{$red1};
-	--clr-sec-border-pri: #{$white1};
-	--clr-sec-border-sec: #{$red1};
-	--clr-sec-border-ter: #{$white1};
+	--clr-home-title: #{$christmas-gold2};
+	--clr-page-title: #{$christmas-green1};
+	--clr-sec-border-pri: #{$christmas-gold1};
+	--clr-sec-border-sec: #{$christmas-red1};
+	--clr-sec-border-ter: #{$christmas-gold1};
 	--clr-listing-border: #{$white1};
 	--clr-listing-border-feat: #{$white1};
 	--clr-post-cat: #{$white1};
-	--clr-post-cat-feat: #{$red1};
+	--clr-post-cat-feat: #{$christmas-red1};
 	--clr-post-title: #{$white1};
-	--clr-post-title-hover: #{$white1};
-	--clr-post-title-hover-feat: #{$white1};
-	--clr-post-date: #{$red1};
-	--clr-post-date-feat: #{$red1};
+	--clr-post-title-hover: #{$christmas-gold1};
+	--clr-post-title-hover-feat: #{$christmas-gold1};
+	--clr-post-date: #{$christmas-green1};
+	--clr-post-date-feat: #{$christmas-green1};
 	--clr-post-snippet: #{$white1};
-	--clr-post-views: #{$red1};
+	--clr-post-views: #{$christmas-gold1};
 	--clr-nav-link: #{$white1};
-	--clr-nav-link-hover: #{$red1};
-	--clr-nav-link-active: #{$red1};
+	--clr-nav-link-hover: #{$christmas-gold1};
+	--clr-nav-link-active: #{$christmas-gold1};
 }
 
 *,
@@ -171,7 +181,7 @@ header {
 		margin: 0;
 		font-size: 16px;
 		// font-weight: 300;
-		// color: var(--clr-page-title);
+		color: var(--clr-home-title);
 		margin-bottom: 10px;
 	}
 
