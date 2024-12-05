@@ -32,26 +32,26 @@ $orange2: #e48e71;
 :root {
 	--clr-html-bg: #{$dark2};
 	--clr-body: #{$white1};
-	--clr-logo: #{$blue3};
-	--clr-scrollbar-thumb: #{$blue3};
-	--clr-page-title: #{$blue3};
-	--clr-sec-border-pri: #{$blue3};
-	--clr-sec-border-sec: #{$orange2};
+	--clr-logo: #{$red1};
+	--clr-scrollbar-thumb: #{$white1};
+	--clr-page-title: #{$red1};
+	--clr-sec-border-pri: #{$white1};
+	--clr-sec-border-sec: #{$red1};
 	--clr-sec-border-ter: #{$white1};
-	--clr-listing-border: #{$blue1};
-	--clr-listing-border-feat: #{$orange1};
+	--clr-listing-border: #{$white1};
+	--clr-listing-border-feat: #{$white1};
 	--clr-post-cat: #{$white1};
-	--clr-post-cat-feat: #{$orange1};
+	--clr-post-cat-feat: #{$red1};
 	--clr-post-title: #{$white1};
-	--clr-post-title-hover: #{$purple1};
-	--clr-post-title-hover-feat: #{$red2};
-	--clr-post-date: #{$blue1};
-	--clr-post-date-feat: #{$orange2};
-	--clr-post-snippet: #{$grey1};
-	--clr-post-views: #{$orange1};
+	--clr-post-title-hover: #{$white1};
+	--clr-post-title-hover-feat: #{$white1};
+	--clr-post-date: #{$red1};
+	--clr-post-date-feat: #{$red1};
+	--clr-post-snippet: #{$white1};
+	--clr-post-views: #{$red1};
 	--clr-nav-link: #{$white1};
-	--clr-nav-link-hover: #{$blue3};
-	--clr-nav-link-active: #{$blue3};
+	--clr-nav-link-hover: #{$red1};
+	--clr-nav-link-active: #{$red1};
 }
 
 *,
@@ -155,7 +155,6 @@ header {
 	// padding-left: 15px;
 
 	h3 {
-		letter-spacing: 0.03rem;
 		font-size: 22px;
 		margin: 0;
 		// font-weight: 300;
@@ -164,14 +163,13 @@ header {
 }
 
 .home-info-box {
-	border-left: 2px solid var(--clr-sec-border-pri);
+	border-left: 1px solid var(--clr-sec-border-pri);
 	margin-bottom: 20px;
 	padding-left: 15px;
 
 	h4 {
-		letter-spacing: 0.03rem;
 		margin: 0;
-		font-size: 18px;
+		font-size: 16px;
 		// font-weight: 300;
 		// color: var(--clr-page-title);
 		margin-bottom: 10px;
@@ -185,11 +183,11 @@ header {
 
 .post-list-featured {
 	margin-bottom: 20px;
-	border-left: 2px solid var(--clr-sec-border-sec);
+	border-left: 1px solid var(--clr-sec-border-sec);
 	padding-left: 15px;
 
 	h4 {
-		letter-spacing: 0.03rem;
+		font-size: 16px;
 		margin: 0;
 		margin-bottom: 15px;
 		// font-weight: 300;
@@ -198,10 +196,12 @@ header {
 }
 
 .post-list-non-featured {
-	border-left: 2px solid var(--clr-sec-border-pri);
+	margin-bottom: 20px;
+	border-left: 1px solid var(--clr-sec-border-pri);
 	padding-left: 15px;
 
 	h4 {
+		font-size: 16px;
 		letter-spacing: 0.03rem;
 		margin: 0;
 		margin-bottom: 17px;

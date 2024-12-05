@@ -10,5 +10,5 @@
 </script>
 
 <div class="post-content-container">
-	{@html data.content}
+	{@render data.content()}
 </div>
