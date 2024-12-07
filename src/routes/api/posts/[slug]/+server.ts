@@ -11,11 +11,11 @@ export const GET: RequestHandler = async ({ params }) => {
 	return json(post_views);
 };
 
-export const PATCH: RequestHandler = async ({ params }) => {
-	await prisma.post_views.update({
-		where: { slug: params.slug },
-		data: { views: { increment: 1 } }
-	});
+// export const PATCH: RequestHandler = async ({ params }) => {
+// 	await prisma.post_views.update({
+// 		where: { slug: params.slug },
+// 		data: { views: { increment: 1 } }
+// 	});
 
-	return json({});
-};
+// 	return json({});
+// };
