@@ -17,6 +17,7 @@ export function updateViewedPostCookie(cookies: Cookies, slug: string) {
 		maxAge: 365 * 24 * 60 * 60 * 1000,
 		httpOnly: true,
 		path: '/',
+		sameSite: 'none',
 		secure: true
 	});
 }
