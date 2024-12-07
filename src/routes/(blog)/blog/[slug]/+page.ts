@@ -5,7 +5,6 @@ import { render } from 'svelte/server';
 // import prisma from '$lib/server/xata';
 
 export const load: PageLoad = async ({ params }): Promise<Post> => {
-	console.log('UNIVERSAL LOAD()');
 	const post = await import(`$posts/${params.slug}.md`);
 
 	return {
