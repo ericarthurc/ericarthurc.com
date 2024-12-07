@@ -17,6 +17,6 @@
 <Navbar />
 <slot />
 
-{#if browser}
-	<SnowFall />
-{/if}
+// {#if browser}
+//	<SnowFall />
+// {/if}
