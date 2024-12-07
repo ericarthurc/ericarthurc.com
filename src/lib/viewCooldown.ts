@@ -1,19 +1,28 @@
+import type { Cookies } from '@sveltejs/kit';
+
 const VIEW_STORAGE_KEY = 'viewedPosts';
 const VIEW_COOLDOWN = 10800000;
 
-function getViewedPosts() {
-	const data = localStorage.getItem(VIEW_STORAGE_KEY);
+function getViewedPostsCookie(cookies: Cookies) {
+	const data = cookies.get(VIEW_STORAGE_KEY);
+
 	return data ? JSON.parse(data) : {};
 }
 
-export function updateViewedPost(slug: string) {
-	const viewedPosts = getViewedPosts();
+export function updateViewedPostCookie(cookies: Cookies, slug: string) {
+	const viewedPosts = getViewedPostsCookie(cookies);
 	viewedPosts[slug] = Date.now();
-	localStorage.setItem(VIEW_STORAGE_KEY, JSON.stringify(viewedPosts));
+
+	cookies.set(VIEW_STORAGE_KEY, JSON.stringify(viewedPosts), {
+		maxAge: 365 * 24 * 60 * 60 * 1000,
+		httpOnly: true,
+		path: '/',
+		secure: false
+	});
 }
 
-export function canViewPost(slug: string) {
-	const viewedPosts = getViewedPosts();
+export function canViewPostCookie(cookies: Cookies, slug: string) {
+	const viewedPosts = getViewedPostsCookie(cookies);
 	const lastViewed = viewedPosts[slug];
 	if (!lastViewed) return true;
 	return Date.now() - lastViewed > VIEW_COOLDOWN;

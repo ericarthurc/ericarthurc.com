@@ -1,13 +1,6 @@
 import prisma from '$lib/server/xata';
 import type { PostMeta } from '@/types';
-// import { SUPABASE_SERVICE } from '$env/static/private';
-// import { createClient } from '@supabase/supabase-js';
-// import type { Database } from '@/supabase';
-
-// export const supabasePrivate = createClient<Database>(
-// 	'https://ahixgcqifvllefpafjim.supabase.co',
-// 	SUPABASE_SERVICE
-// );
+import type { Handle } from '@sveltejs/kit';
 
 async function loader() {
 	const paths = import.meta.glob(`$posts/*.md`, { eager: true });
@@ -38,3 +31,9 @@ async function loader() {
 }
 
 await loader();
+
+// export const handle: Handle = async ({ event, resolve }) => {
+// 	const response = await resolve(event);
+
+// 	return response;
+// };

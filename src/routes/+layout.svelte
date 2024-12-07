@@ -3,7 +3,6 @@
 	import Navbar from '#/Navbar.svelte';
 	import '@/styles/main.scss';
 	import { browser } from '$app/environment';
-	import SnowFall from '#/SnowFall.svelte';
 	import Dev from '#/Dev.svelte';
 </script>
 
