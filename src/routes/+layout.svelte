@@ -13,10 +13,5 @@
 	<link rel="preload" as="font" href={`${base}/fonts/GeistMono.ttf`} crossorigin="anonymous" />
 </svelte:head>
 
-<Dev />
 <Navbar />
 <slot />
-
-// {#if browser}
-//	<SnowFall />
-// {/if}
