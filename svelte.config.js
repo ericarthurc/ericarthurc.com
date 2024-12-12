@@ -4,8 +4,8 @@ import { mdsvex, escapeSvelte } from 'mdsvex';
 import { bundledLanguages, bundledThemes, createHighlighter } from 'shiki';
 
 // custom syntax highlighting themes
-const codeSandBoxTheme = JSON.parse(fs.readFileSync('syntax_themes/codesandbox-dark.json', 'utf8'));
-const githubDarkTheme = JSON.parse(fs.readFileSync('syntax_themes/github-dark.json', 'utf8'));
+// const codeSandBoxTheme = JSON.parse(fs.readFileSync('syntax_themes/codesandbox-dark.json', 'utf8'));
+// const githubDarkTheme = JSON.parse(fs.readFileSync('syntax_themes/github-dark.json', 'utf8'));
 
 const shiki = await createHighlighter({
 	themes: [...Object.keys(bundledThemes)],
