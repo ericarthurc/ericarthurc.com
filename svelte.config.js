@@ -2,13 +2,15 @@ import adapter from '@sveltejs/adapter-netlify';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import { mdsvex, escapeSvelte } from 'mdsvex';
 import { bundledLanguages, bundledThemes, createHighlighter } from 'shiki';
+import fs from 'fs';
 
 // custom syntax highlighting themes
 // const codeSandBoxTheme = JSON.parse(fs.readFileSync('syntax_themes/codesandbox-dark.json', 'utf8'));
 // const githubDarkTheme = JSON.parse(fs.readFileSync('syntax_themes/github-dark.json', 'utf8'));
+const netlifyTheme = JSON.parse(fs.readFileSync('syntax_themes/netlify-dark.json', 'utf8'));
 
 const shiki = await createHighlighter({
-	themes: [...Object.keys(bundledThemes)],
+	themes: [...Object.keys(bundledThemes), netlifyTheme],
 	langs: [...Object.keys(bundledLanguages)]
 });
 
@@ -23,7 +25,7 @@ const mdsvexOptions = {
 			return `{@html \`${escapeSvelte(
 				shiki.codeToHtml(code, {
 					lang,
-					theme: 'material-theme-darker',
+					theme: 'Netlify',
 					transformers: [
 						{
 							pre(hast) {

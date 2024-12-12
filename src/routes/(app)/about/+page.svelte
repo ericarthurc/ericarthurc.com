@@ -2,5 +2,6 @@
 	<h3>About Me</h3>
 </div>
 
-<div class="about-layout"></div>
 <h4>Coming Soon</h4>
+
+<div class="about-layout"></div>
