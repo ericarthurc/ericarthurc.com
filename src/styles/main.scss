@@ -29,39 +29,41 @@ $blue2: #7cddff;
 $blue3: #82aaff;
 $orange1: #ffcb6b;
 $orange2: #e48e71;
+$orange3: #f7b155;
+$orange4: #964516;
 
 // christmas
 $christmas-green1: #63b948;
 $christmas-green2: #304829;
 $christmas-red1: #ff5050;
 $christmas-red2: #bc3734;
-$christmas-gold1: #f3d997;
+$christmas-gold1: #ffdc73;
 $christmas-gold2: #f3d997;
 
 :root {
 	--clr-html-bg: #{$dark2};
 	--clr-body: #{$white1};
-	--clr-logo: #{$christmas-red1};
+	--clr-logo: #{$orange3};
 	--clr-scrollbar-thumb: #{$white1};
-	--clr-home-title: #{$christmas-gold2};
-	--clr-page-title: #{$christmas-green1};
-	--clr-sec-border-pri: #{$christmas-gold1};
-	--clr-sec-border-sec: #{$christmas-red1};
-	--clr-sec-border-ter: #{$christmas-gold1};
+	--clr-home-title: #{$orange3};
+	--clr-page-title: #{$orange3};
+	--clr-sec-border-pri: #{$orange3};
+	--clr-sec-border-sec: #{$orange3};
+	--clr-sec-border-ter: #{$orange3};
 	--clr-listing-border: #{$white1};
 	--clr-listing-border-feat: #{$white1};
 	--clr-post-cat: #{$white1};
-	--clr-post-cat-feat: #{$christmas-red1};
+	--clr-post-cat-feat: #{$orange3};
 	--clr-post-title: #{$white1};
-	--clr-post-title-hover: #{$christmas-gold1};
-	--clr-post-title-hover-feat: #{$christmas-gold1};
-	--clr-post-date: #{$christmas-green1};
-	--clr-post-date-feat: #{$christmas-green1};
+	--clr-post-title-hover: #{$orange3};
+	--clr-post-title-hover-feat: #{$orange3};
+	--clr-post-date: #{$orange3};
+	--clr-post-date-feat: #{$orange3};
 	--clr-post-snippet: #{$white1};
-	--clr-post-views: #{$christmas-gold1};
+	--clr-post-views: #{$orange3};
 	--clr-nav-link: #{$white1};
-	--clr-nav-link-hover: #{$christmas-gold1};
-	--clr-nav-link-active: #{$christmas-gold1};
+	--clr-nav-link-hover: #{$orange3};
+	--clr-nav-link-active: #{$orange3};
 }
 
 *,
@@ -72,7 +74,7 @@ $christmas-gold2: #f3d997;
 
 html {
 	background-color: var(--clr-html-bg);
-	font-family: 'Geist', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+	font-family: 'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
 		'Segoe UI Symbol', 'Noto Color Emoji';
 	-webkit-font-smoothing: antialiased;
 }

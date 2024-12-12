@@ -1,12 +1,11 @@
-// import adapter from '@sveltejs/adapter-static';
 import adapter from '@sveltejs/adapter-netlify';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import { mdsvex, escapeSvelte } from 'mdsvex';
 import { bundledLanguages, bundledThemes, createHighlighter } from 'shiki';
-import fs from 'fs';
 
-const codeSandBoxTheme = JSON.parse(fs.readFileSync('syntax_themes/codesandbox-dark.json', 'utf8'));
-const githubDarkTheme = JSON.parse(fs.readFileSync('syntax_themes/github-dark.json', 'utf8'));
+// custom syntax highlighting themes
+// const codeSandBoxTheme = JSON.parse(fs.readFileSync('syntax_themes/codesandbox-dark.json', 'utf8'));
+// const githubDarkTheme = JSON.parse(fs.readFileSync('syntax_themes/github-dark.json', 'utf8'));
 
 const shiki = await createHighlighter({
 	themes: [...Object.keys(bundledThemes)],
